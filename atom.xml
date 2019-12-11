@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-11T13:23:51.849Z</updated>
+  <updated>2019-12-11T13:31:58.254Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图解MVVM与MVC</title>
+    <link href="https://www.github.com/qyg2019/2019/12/11/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/"/>
+    <id>https://www.github.com/qyg2019/2019/12/11/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/</id>
+    <published>2019-12-11T13:29:58.626Z</published>
+    <updated>2019-12-11T13:31:58.254Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/img/MVC.png" alt="MVC"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/img/MVC.png&quot; alt=&quot;MVC&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="MVVM与MVC" scheme="https://www.github.com/qyg2019/categories/MVVM%E4%B8%8EMVC/"/>
+    
+    
+      <category term="MVVM与MVC" scheme="https://www.github.com/qyg2019/tags/MVVM%E4%B8%8EMVC/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue指令学习</title>
