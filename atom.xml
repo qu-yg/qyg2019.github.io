@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-11T13:31:58.254Z</updated>
+  <updated>2019-12-13T12:05:02.809Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git升级模型</title>
+    <link href="https://www.github.com/qyg2019/2019/12/13/git/"/>
+    <id>https://www.github.com/qyg2019/2019/12/13/git/</id>
+    <published>2019-12-13T09:09:53.859Z</published>
+    <updated>2019-12-13T12:05:02.809Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/img/1.png" alt=""></p><h4 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h4><p>本地系统上的任何目录或目录树都可以成为Git仓库的工作目录。工作目录可以拥有形成一个整体工作区的任意数量的子目录。在将Git连接到本地目录树时，会创建一个仓库框架，也就是本地仓库（默认情况下本地仓库为.git）</p><p>可以通过–git-dir或者一个环境变量$GIT_DIR来重写git的默认位置。</p><hr><h4 id="暂存区域"><a href="#暂存区域" class="headerlink" title="暂存区域"></a>暂存区域</h4><p>一个在变更被提交到本地仓库之前暂存变更的地方，保存已经从工作目录升级了的任意内容的集合。</p><p>两种使用场景：</p><p>1.准备场景</p><p>用户在工作区中完成变更，将文件移动到暂存区中，支持任意力度，甚至可以一个一个文件升级。</p><p>2.修复场景</p><p>拉取仓库中最后一次提交，更新其内容，推送会前一次提交的位置。</p><p>3.处理合并冲突</p><p>将无法解决的冲突放入工作目录中，暂存那些被干净合并的文件，待冲突解决后，暂存区包含一组完整的解决冲突后的文件，提交到本地仓库。</p><p>可以绕过暂存区吗？</p><p>仅适用于Git已经在追踪的文件，这意味着文件首次被添加到Git时，必须经历暂存阶段。</p><hr><h4 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h4><p>本地环境上Git级别的最后一个部分，通过两种方式来创建：</p><p>1.远程仓库的一份克隆 </p><p>2.告知Git在本地初始化一个新环境</p><p>它是当前用户独占使用的一个源仓库，用户在对内容感到满意之前，都可以进行修改，之后可以将内容发送到远程仓库。如果工作目录被意外清除并且未同步到远程，那么内容将会丢失。如果其他人持续更新特定的远程仓库，那么从本地仓库将内容同步到远程仓库之间时间间隔越长，出现合并问题的概率越高。</p><hr><h4 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h4><p>多个Git用户从各自本地仓库向上同步变更的地方。</p><ul><li>远程仓库是唯一的，对于多个项目而言，可以有许多远程仓库，但不会再服务器生成或使用远程仓库的多个副本</li><li>可以根据需要将远程仓库多次克隆到不同的本地仓库</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/img/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;工作目录&quot;&gt;&lt;a href=&quot;#工作目录&quot; class=&quot;headerlink&quot; title=&quot;工作目录&quot;&gt;&lt;/a&gt;工作目录&lt;/h4&gt;&lt;p&gt;本地系统上的任何目录或目录树都可以成为Git仓库的
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>图解MVVM与MVC</title>
