@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-13T12:05:02.809Z</updated>
+  <updated>2019-12-13T12:50:21.854Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移动内容的核心Git命令</title>
+    <link href="https://www.github.com/qyg2019/2019/12/13/git%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4/"/>
+    <id>https://www.github.com/qyg2019/2019/12/13/git%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4/</id>
+    <published>2019-12-13T12:31:28.949Z</published>
+    <updated>2019-12-13T12:50:21.854Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/img/2.png" alt="git"></p><table><thead><tr><th align="center">从</th><th align="center">到</th><th align="center">命令</th><th align="center">注解</th></tr></thead><tbody><tr><td align="center">工作目录</td><td align="center">暂存区域</td><td align="center">add</td><td align="center">暂存本地变更</td></tr><tr><td align="center">暂存区域</td><td align="center">本地仓库</td><td align="center">commit</td><td align="center">仅提交暂存区域内容</td></tr><tr><td align="center">本地仓库</td><td align="center">远程仓库</td><td align="center">push</td><td align="center">在推送时同步内容</td></tr><tr><td align="center">本地仓库</td><td align="center">工作目录</td><td align="center">checkout</td><td align="center">切换当前分支</td></tr><tr><td align="center">远程仓库</td><td align="center">本地环境</td><td align="center">clone</td><td align="center">创建本地仓库和工作目录</td></tr><tr><td align="center">远程仓库</td><td align="center">本地仓库</td><td align="center">fetch</td><td align="center">更新远程分支的引用</td></tr><tr><td align="center">远程仓库</td><td align="center">本地仓库和工作目录</td><td align="center">pull</td><td align="center">抓取合并到本地分支和工作目录</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/img/2.png&quot; alt=&quot;git&quot;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;从&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;到&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;命令&lt;/th&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Git升级模型</title>
