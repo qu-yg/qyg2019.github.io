@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-13T12:50:21.854Z</updated>
+  <updated>2019-12-15T12:21:24.607Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置Git</title>
+    <link href="https://www.github.com/qyg2019/2019/12/15/%E9%85%8D%E7%BD%AEGit/"/>
+    <id>https://www.github.com/qyg2019/2019/12/15/%E9%85%8D%E7%BD%AEGit/</id>
+    <published>2019-12-15T11:34:00.459Z</published>
+    <updated>2019-12-15T12:21:24.607Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了设置Git中的配置值，需要使用config命令。</p><h3 id="告知Git你的身份"><a href="#告知Git你的身份" class="headerlink" title="告知Git你的身份"></a>告知Git你的身份</h3><p>这要根据用户名和电子邮件地址来确定，Git是一个源管理系统，它期望知道是谁在进行这些变更，以方便记录。</p><p>git config–global user.name <name></p><p>git config–global user.email <email address></p><p>实际上Git可以接受任何邮件地址，在设置时并不会对其进行验证，但是Git的一些高级功能可能会使用这个邮件地址，因此保证其正确性还是很有必要的。</p><h3 id="配置范围"><a href="#配置范围" class="headerlink" title="配置范围"></a>配置范围</h3><ol><li>system</li></ol><p>在系统级别配置意味着会被应用于指定机器上所有仓库。用config命令指定–system选项。</p><p>git config–system  <options></p><ol start="2"><li>global</li></ol><p>全局配置值适用于特定用户的所有仓库，这是用户适用最常见的级别。</p><p>git config–global  <options></p><ol start="3"><li>local</li></ol><p>该设置只用于一个仓库的上下文。</p><p>git config–local  <options></p><h3 id="设置的层次结构"><a href="#设置的层次结构" class="headerlink" title="设置的层次结构"></a>设置的层次结构</h3><p>首先会在本地仓库配置中查找，然后查找全局配置，最后查找系统配置。如果找到一个值，那么就是用这个值。 </p><ul><li><h4 id="查看配置值"><a href="#查看配置值" class="headerlink" title="查看配置值"></a>查看配置值</h4></li></ul><p>git config <setting></p><ul><li><h4 id="撤销配置值"><a href="#撤销配置值" class="headerlink" title="撤销配置值"></a>撤销配置值</h4></li></ul><p>git config –unset <options></p><ul><li><h4 id="列出配置值"><a href="#列出配置值" class="headerlink" title="列出配置值"></a>列出配置值</h4></li></ul><p>git config –list</p><p>包含但不限于本地，全局，系统，如果同时设置将会一起显示，为了避免混淆，可以指定范围。</p><p>git config –global –list</p><ul><li><h4 id="一次性配置"><a href="#一次性配置" class="headerlink" title="一次性配置"></a>一次性配置</h4></li></ul><p>git -c <setting>=<value>      类似于键值对的形式</p><p>​     </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;为了设置Git中的配置值，需要使用config命令。&lt;/p&gt;
+&lt;h3 id=&quot;告知Git你的身份&quot;&gt;&lt;a href=&quot;#告知Git你的身份&quot; class=&quot;headerlink&quot; title=&quot;告知Git你的身份&quot;&gt;&lt;/a&gt;告知Git你的身份&lt;/h3&gt;&lt;p&gt;这要根据用户名和
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://www.github.com/qyg2019/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>移动内容的核心Git命令</title>

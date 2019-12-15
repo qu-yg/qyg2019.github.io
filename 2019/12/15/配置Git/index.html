@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>配置Git | yg.qu</title><meta name="generator" content="Hexo 4.0.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">配置Git</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">配置Git</h1><div class="post-meta"><a href="/2019/12/15/%E9%85%8D%E7%BD%AEGit/#comments" class="comment-count"></a><p><span class="date">Dec 15, 2019</span><span><a href="/categories/Git/" class="category">Git</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>为了设置Git中的配置值，需要使用config命令。</p>
+<h3 id="告知Git你的身份"><a href="#告知Git你的身份" class="headerlink" title="告知Git你的身份"></a>告知Git你的身份</h3><p>这要根据用户名和电子邮件地址来确定，Git是一个源管理系统，它期望知道是谁在进行这些变更，以方便记录。</p>
+<p>git config–global user.name <name></p>
+<p>git config–global user.email <email address></p>
+<p>实际上Git可以接受任何邮件地址，在设置时并不会对其进行验证，但是Git的一些高级功能可能会使用这个邮件地址，因此保证其正确性还是很有必要的。</p>
+<h3 id="配置范围"><a href="#配置范围" class="headerlink" title="配置范围"></a>配置范围</h3><ol>
+<li>system</li>
+</ol>
+<p>在系统级别配置意味着会被应用于指定机器上所有仓库。用config命令指定–system选项。</p>
+<p>git config–system  <options></p>
+<ol start="2">
+<li>global</li>
+</ol>
+<p>全局配置值适用于特定用户的所有仓库，这是用户适用最常见的级别。</p>
+<p>git config–global  <options></p>
+<ol start="3">
+<li>local</li>
+</ol>
+<p>该设置只用于一个仓库的上下文。</p>
+<p>git config–local  <options></p>
+<h3 id="设置的层次结构"><a href="#设置的层次结构" class="headerlink" title="设置的层次结构"></a>设置的层次结构</h3><p>首先会在本地仓库配置中查找，然后查找全局配置，最后查找系统配置。如果找到一个值，那么就是用这个值。 </p>
+<ul>
+<li><h4 id="查看配置值"><a href="#查看配置值" class="headerlink" title="查看配置值"></a>查看配置值</h4></li>
+</ul>
+<p>git config <setting></p>
+<ul>
+<li><h4 id="撤销配置值"><a href="#撤销配置值" class="headerlink" title="撤销配置值"></a>撤销配置值</h4></li>
+</ul>
+<p>git config –unset <options></p>
+<ul>
+<li><h4 id="列出配置值"><a href="#列出配置值" class="headerlink" title="列出配置值"></a>列出配置值</h4></li>
+</ul>
+<p>git config –list</p>
+<p>包含但不限于本地，全局，系统，如果同时设置将会一起显示，为了避免混淆，可以指定范围。</p>
+<p>git config –global –list</p>
+<ul>
+<li><h4 id="一次性配置"><a href="#一次性配置" class="headerlink" title="一次性配置"></a>一次性配置</h4></li>
+</ul>
+<p>git -c <setting>=<value>      类似于键值对的形式</p>
+<p>​     </p>
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="/https:/www.github.com/qyg2019/2019/12/15/%E9%85%8D%E7%BD%AEGit/">https://www.github.com/qyg2019/2019/12/15/配置Git/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/Git/">Git</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2019/12/13/git%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4/" class="next">移动内容的核心Git命令</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '5abc2669b95e8fa35329',
+  clientSecret: 'c84eacf42842ea4fb21c2d0ab42b136a3f2f532c',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#告知Git你的身份"><span class="toc-text">告知Git你的身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置范围"><span class="toc-text">配置范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置的层次结构"><span class="toc-text">设置的层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看配置值"><span class="toc-text">查看配置值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销配置值"><span class="toc-text">撤销配置值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列出配置值"><span class="toc-text">列出配置值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一次性配置"><span class="toc-text">一次性配置</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/%E9%85%8D%E7%BD%AEGit/">配置Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/git%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4/">移动内容的核心Git命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/git/">Git升级模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/11/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/">图解MVVM与MVC</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/11/day1/">Vue指令学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/1/">分布式版本控制系统Git常用命令浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/29/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">7</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>
