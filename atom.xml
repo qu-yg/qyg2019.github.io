@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-15T12:21:24.607Z</updated>
+  <updated>2019-12-16T14:35:17.967Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VUE实例的生命周期</title>
+    <link href="https://www.github.com/qyg2019/2019/12/16/%E6%9C%AA%E5%91%BD%E5%90%8D/"/>
+    <id>https://www.github.com/qyg2019/2019/12/16/%E6%9C%AA%E5%91%BD%E5%90%8D/</id>
+    <published>2019-12-16T11:22:26.274Z</published>
+    <updated>2019-12-16T14:35:17.967Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="VUE实例的生命周期"><a href="#VUE实例的生命周期" class="headerlink" title="VUE实例的生命周期"></a>VUE实例的生命周期</h3><hr><ul><li><p>什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！</p></li><li><p><a href="https://cn.vuejs.org/v2/api/#选项-生命周期钩子" target="_blank" rel="noopener">生命周期钩子</a>：就是生命周期事件的别名而已；</p></li><li><p>生命周期钩子 = 生命周期函数 = 生命周期事件</p></li></ul><h4 id="主要的生命周期函数分类："><a href="#主要的生命周期函数分类：" class="headerlink" title="主要的生命周期函数分类："></a>主要的生命周期函数分类：</h4><ul><li><p>创建期间的生命周期函数：</p><ul><li><p>beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性</p><ul><li><p>created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板</p></li><li><p>beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中</p></li><li><p>mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示</p></li></ul></li></ul></li></ul><ul><li><p>运行期间的生命周期函数：</p><ul><li>beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点<ul><li>updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！</li></ul></li></ul></li></ul><ul><li>销毁期间的生命周期函数：<ul><li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。<ul><li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li></ul></li></ul></li></ul><p><img src="/img/lifecycle.png" alt="生命周期"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;VUE实例的生命周期&quot;&gt;&lt;a href=&quot;#VUE实例的生命周期&quot; class=&quot;headerlink&quot; title=&quot;VUE实例的生命周期&quot;&gt;&lt;/a&gt;VUE实例的生命周期&lt;/h3&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;什么是生命周期：从Vue实例创建、运行、到销毁期
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://www.github.com/qyg2019/categories/Vue/"/>
+    
+    
+      <category term="Vue" scheme="https://www.github.com/qyg2019/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>配置Git</title>
