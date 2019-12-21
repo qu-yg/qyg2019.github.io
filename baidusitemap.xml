@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.github.com/qyg2019/2019/12/17/vue-resource/</loc>
-    <lastmod>2019-12-17</lastmod>
-  </url>  <url>
     <loc>https://www.github.com/qyg2019/2019/12/16/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    <lastmod>2019-12-16</lastmod>
+    <lastmod>2019-12-21</lastmod>
+  </url>  <url>
+    <loc>https://www.github.com/qyg2019/2019/12/17/vue-resource/</loc>
+    <lastmod>2019-12-21</lastmod>
+  </url>  <url>
+    <loc>https://www.github.com/qyg2019/2019/12/11/day1/</loc>
+    <lastmod>2019-12-21</lastmod>
   </url>  <url>
     <loc>https://www.github.com/qyg2019/2019/12/15/%E9%85%8D%E7%BD%AEGit/</loc>
     <lastmod>2019-12-15</lastmod>
@@ -17,9 +20,6 @@
     <lastmod>2019-12-13</lastmod>
   </url>  <url>
     <loc>https://www.github.com/qyg2019/2019/12/11/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/</loc>
-    <lastmod>2019-12-11</lastmod>
-  </url>  <url>
-    <loc>https://www.github.com/qyg2019/2019/12/11/day1/</loc>
     <lastmod>2019-12-11</lastmod>
   </url>  <url>
     <loc>https://www.github.com/qyg2019/2019/11/30/1/</loc>
