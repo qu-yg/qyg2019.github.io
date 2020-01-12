@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>webpack使用 | yg.qu</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">webpack使用</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">webpack使用</h1><div class="post-meta"><a href="/2020/01/05/webpack/#comments" class="comment-count"></a><p><span class="date">Jan 05, 2020</span><span><a href="/categories/webpack/" class="category">webpack</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="在网页中会引用哪些常见的静态资源？"><a href="#在网页中会引用哪些常见的静态资源？" class="headerlink" title="在网页中会引用哪些常见的静态资源？"></a>在网页中会引用哪些常见的静态资源？</h2><ul>
+<li>JS<ul>
+<li>.js  .jsx  .coffee  .ts（TypeScript  类 C# 语言）</li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>.css  .less   .sass  .scss</li>
+</ul>
+</li>
+<li>Images<ul>
+<li>.jpg   .png   .gif   .bmp   .svg</li>
+</ul>
+</li>
+<li>字体文件（Fonts）<ul>
+<li>.svg   .ttf   .eot   .woff   .woff2</li>
+</ul>
+</li>
+<li>模板文件<ul>
+<li>.ejs   .jade  .vue</li>
+</ul>
+</li>
+</ul>
+<h2 id="网页中引入的静态资源多了以后有什么问题？？？"><a href="#网页中引入的静态资源多了以后有什么问题？？？" class="headerlink" title="网页中引入的静态资源多了以后有什么问题？？？"></a>网页中引入的静态资源多了以后有什么问题？？？</h2><ol>
+<li>网页加载速度慢， 因为 我们要发起很多的二次请求；</li>
+<li>要处理错综复杂的依赖关系</li>
+</ol>
+<h2 id="如何解决上述两个问题"><a href="#如何解决上述两个问题" class="headerlink" title="如何解决上述两个问题"></a>如何解决上述两个问题</h2><ol>
+<li>合并、压缩、精灵图、图片的Base64编码</li>
+<li>可以使用之前学过的requireJS、也可以使用webpack可以解决各个包之间的复杂依赖关系；</li>
+</ol>
+<h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack?"></a>什么是webpack?</h2><p>webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来的一个前端工具；</p>
+<h2 id="如何完美实现上述的2种解决方案"><a href="#如何完美实现上述的2种解决方案" class="headerlink" title="如何完美实现上述的2种解决方案"></a>如何完美实现上述的2种解决方案</h2><ol>
+<li>使用Gulp， 是基于 task 任务的；</li>
+<li>使用Webpack， 是基于整个项目进行构建的；</li>
+</ol>
+<ul>
+<li>借助于webpack这个前端自动化构建工具，可以完美实现资源的合并、打包、压缩、混淆等诸多功能。</li>
+<li>根据官网的图片介绍webpack打包的过程</li>
+</ul>
+<h2 id="webpack安装的两种方式"><a href="#webpack安装的两种方式" class="headerlink" title="webpack安装的两种方式"></a>webpack安装的两种方式</h2><ol>
+<li>运行<code>npm i webpack -g</code>全局安装webpack，这样就能在全局使用webpack的命令</li>
+<li>在项目根目录中运行<code>npm i webpack --save-dev</code>安装到项目依赖中</li>
+</ol>
+<h2 id="初步使用webpack打包构建列表隔行变色案例"><a href="#初步使用webpack打包构建列表隔行变色案例" class="headerlink" title="初步使用webpack打包构建列表隔行变色案例"></a>初步使用webpack打包构建列表隔行变色案例</h2><ol>
+<li>运行<code>npm init</code>初始化项目，使用npm管理项目中的依赖包</li>
+<li>创建项目基本的目录结构</li>
+<li>使用<code>cnpm i jquery --save</code>安装jquery类库</li>
+<li>创建<code>main.js</code>并书写各行变色的代码逻辑：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导入jquery类库</span><br><span class="line">   import $ from &#39;jquery&#39;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; 设置偶数行背景色，索引从0开始，0是偶数</span><br><span class="line">   $(&#39;#list li:even&#39;).css(&#39;backgroundColor&#39;,&#39;lightblue&#39;);</span><br><span class="line">   &#x2F;&#x2F; 设置奇数行背景色</span><br><span class="line">   $(&#39;#list li:odd&#39;).css(&#39;backgroundColor&#39;,&#39;pink&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>直接在页面上引用<code>main.js</code>会报错，因为浏览器不认识<code>import</code>这种高级的JS语法，需要使用webpack进行处理，webpack默认会把这种高级的语法转换为低级的浏览器能识别的语法；</li>
+<li>运行<code>webpack 入口文件路径 输出文件路径</code>对<code>main.js</code>进行处理：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack src&#x2F;js&#x2F;main.js dist&#x2F;bundle.js</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用webpack的配置文件简化打包时候的命令"><a href="#使用webpack的配置文件简化打包时候的命令" class="headerlink" title="使用webpack的配置文件简化打包时候的命令"></a>使用webpack的配置文件简化打包时候的命令</h2><ol>
+<li>在项目根目录中创建<code>webpack.config.js</code></li>
+<li>由于运行webpack命令的时候，webpack需要指定入口文件和输出文件的路径，所以，我们需要在<code>webpack.config.js</code>中配置这两个路径：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导入处理路径的模块</span><br><span class="line">var path &#x3D; require(&#39;path&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导出一个配置对象，将来webpack在启动的时候，会默认来查找webpack.config.js，并读取这个文件中导出的配置对象，来进行打包处理</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: path.resolve(__dirname, &#39;src&#x2F;js&#x2F;main.js&#39;), &#x2F;&#x2F; 项目入口文件</span><br><span class="line">    output: &#123; &#x2F;&#x2F; 配置输出选项</span><br><span class="line">        path: path.resolve(__dirname, &#39;dist&#39;), &#x2F;&#x2F; 配置输出的路径</span><br><span class="line">        filename: &#39;bundle.js&#39; &#x2F;&#x2F; 配置输出的文件名</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="实现webpack的实时打包构建"><a href="#实现webpack的实时打包构建" class="headerlink" title="实现webpack的实时打包构建"></a>实现webpack的实时打包构建</h2><ol>
+<li>由于每次重新修改代码之后，都需要手动运行webpack打包的命令，比较麻烦，所以使用<code>webpack-dev-server</code>来实现代码实时打包编译，当修改代码之后，会自动进行打包构建。</li>
+<li>运行<code>cnpm i webpack-dev-server --save-dev</code>安装到开发依赖</li>
+<li>安装完成之后，在命令行直接运行<code>webpack-dev-server</code>来进行打包，发现报错，此时需要借助于<code>package.json</code>文件中的指令，来进行运行<code>webpack-dev-server</code>命令，在<code>scripts</code>节点下新增<code>&quot;dev&quot;: &quot;webpack-dev-server&quot;</code>指令，发现可以进行实时打包，但是dist目录下并没有生成<code>bundle.js</code>文件，这是因为<code>webpack-dev-server</code>将打包好的文件放在了内存中<ul>
+<li>把<code>bundle.js</code>放在内存中的好处是：由于需要实时打包编译，所以放在内存中速度会非常快</li>
+<li>这个时候访问webpack-dev-server启动的<code>http://localhost:8080/</code>网站，发现是一个文件夹的面板，需要点击到src目录下，才能打开我们的index首页，此时引用不到bundle.js文件，需要修改index.html中script的src属性为:<code>&lt;script src=&quot;../bundle.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>为了能在访问<code>http://localhost:8080/</code>的时候直接访问到index首页，可以使用<code>--contentBase src</code>指令来修改dev指令，指定启动的根目录：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --contentBase src&quot;</span><br></pre></td></tr></table></figure>
+同时修改index页面中script的src属性为<code>&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="使用html-webpack-plugin插件配置启动页面"><a href="#使用html-webpack-plugin插件配置启动页面" class="headerlink" title="使用html-webpack-plugin插件配置启动页面"></a>使用<code>html-webpack-plugin</code>插件配置启动页面</h2><p>由于使用<code>--contentBase</code>指令的过程比较繁琐，需要指定启动的目录，同时还需要修改index.html中script标签的src属性，所以推荐大家使用<code>html-webpack-plugin</code>插件配置启动页面.</p>
+<ol>
+<li>运行<code>cnpm i html-webpack-plugin --save-dev</code>安装到开发依赖</li>
+<li>修改<code>webpack.config.js</code>配置文件如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导入处理路径的模块</span><br><span class="line">var path &#x3D; require(&#39;path&#39;);</span><br><span class="line">&#x2F;&#x2F; 导入自动生成HTMl文件的插件</span><br><span class="line">var htmlWebpackPlugin &#x3D; require(&#39;html-webpack-plugin&#39;);</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: path.resolve(__dirname, &#39;src&#x2F;js&#x2F;main.js&#39;), &#x2F;&#x2F; 项目入口文件</span><br><span class="line">    output: &#123; &#x2F;&#x2F; 配置输出选项</span><br><span class="line">        path: path.resolve(__dirname, &#39;dist&#39;), &#x2F;&#x2F; 配置输出的路径</span><br><span class="line">        filename: &#39;bundle.js&#39; &#x2F;&#x2F; 配置输出的文件名</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins:[ &#x2F;&#x2F; 添加plugins节点配置插件</span><br><span class="line">        new htmlWebpackPlugin(&#123;</span><br><span class="line">            template:path.resolve(__dirname, &#39;src&#x2F;index.html&#39;),&#x2F;&#x2F;模板路径</span><br><span class="line">            filename:&#39;index.html&#39;&#x2F;&#x2F;自动生成的HTML文件的名称</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>修改<code>package.json</code>中<code>script</code>节点中的dev指令如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server&quot;</span><br></pre></td></tr></table></figure></li>
+<li>将index.html中script标签注释掉，因为<code>html-webpack-plugin</code>插件会自动把bundle.js注入到index.html页面中！</li>
+</ol>
+<h2 id="实现自动打开浏览器、热更新和配置浏览器的默认端口号"><a href="#实现自动打开浏览器、热更新和配置浏览器的默认端口号" class="headerlink" title="实现自动打开浏览器、热更新和配置浏览器的默认端口号"></a>实现自动打开浏览器、热更新和配置浏览器的默认端口号</h2><p><strong>注意：热更新在JS中表现的不明显，可以从一会儿要讲到的CSS身上进行介绍说明！</strong></p>
+<h3 id="方式1："><a href="#方式1：" class="headerlink" title="方式1："></a>方式1：</h3><ul>
+<li>修改<code>package.json</code>的script节点如下，其中<code>--open</code>表示自动打开浏览器，<code>--port 4321</code>表示打开的端口号为4321，<code>--hot</code>表示启用浏览器热更新：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --hot --port 4321 --open&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="方式2："><a href="#方式2：" class="headerlink" title="方式2："></a>方式2：</h3><ol>
+<li>修改<code>webpack.config.js</code>文件，新增<code>devServer</code>节点如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line">        hot:true,</span><br><span class="line">        open:true,</span><br><span class="line">        port:4321</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>在头部引入<code>webpack</code>模块：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webpack &#x3D; require(&#39;webpack&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>在<code>plugins</code>节点下新增：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new webpack.HotModuleReplacementPlugin()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用webpack打包css文件"><a href="#使用webpack打包css文件" class="headerlink" title="使用webpack打包css文件"></a>使用webpack打包css文件</h2><ol>
+<li>运行<code>cnpm i style-loader css-loader --save-dev</code></li>
+<li>修改<code>webpack.config.js</code>这个配置文件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module: &#123; &#x2F;&#x2F; 用来配置第三方loader模块的</span><br><span class="line">        rules: [ &#x2F;&#x2F; 文件的匹配规则</span><br><span class="line">            &#123; test: &#x2F;\.css$&#x2F;, use: [&#39;style-loader&#39;, &#39;css-loader&#39;] &#125;&#x2F;&#x2F;处理css文件的规则</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>注意：<code>use</code>表示使用哪些模块来处理<code>test</code>所匹配到的文件；<code>use</code>中相关loader模块的调用顺序是从后向前调用的；</li>
+</ol>
+<h2 id="使用webpack打包less文件"><a href="#使用webpack打包less文件" class="headerlink" title="使用webpack打包less文件"></a>使用webpack打包less文件</h2><ol>
+<li>运行<code>cnpm i less-loader less -D</code></li>
+<li>修改<code>webpack.config.js</code>这个配置文件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; test: &#x2F;\.less$&#x2F;, use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;less-loader&#39;] &#125;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用webpack打包sass文件"><a href="#使用webpack打包sass文件" class="headerlink" title="使用webpack打包sass文件"></a>使用webpack打包sass文件</h2><ol>
+<li>运行<code>cnpm i sass-loader node-sass --save-dev</code></li>
+<li>在<code>webpack.config.js</code>中添加处理sass文件的loader模块：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; test: &#x2F;\.scss$&#x2F;, use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;sass-loader&#39;] &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用webpack处理css中的路径"><a href="#使用webpack处理css中的路径" class="headerlink" title="使用webpack处理css中的路径"></a>使用webpack处理css中的路径</h2><ol>
+<li>运行<code>cnpm i url-loader file-loader --save-dev</code></li>
+<li>在<code>webpack.config.js</code>中添加处理url路径的loader模块：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; test: &#x2F;\.(png|jpg|gif)$&#x2F;, use: &#39;url-loader&#39; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>可以通过<code>limit</code>指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; test: &#x2F;\.(png|jpg|gif)$&#x2F;, use: &#39;url-loader?limit&#x3D;43960&#39; &#125;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用babel处理高级JS语法"><a href="#使用babel处理高级JS语法" class="headerlink" title="使用babel处理高级JS语法"></a>使用babel处理高级JS语法</h2><ol>
+<li>运行<code>cnpm i babel-core babel-loader babel-plugin-transform-runtime --save-dev</code>安装babel的相关loader包</li>
+<li>运行<code>cnpm i babel-preset-es2015 babel-preset-stage-0 --save-dev</code>安装babel转换的语法</li>
+<li>在<code>webpack.config.js</code>中添加相关loader模块，其中需要注意的是，一定要把<code>node_modules</code>文件夹添加到排除项：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; test: &#x2F;\.js$&#x2F;, use: &#39;babel-loader&#39;, exclude: &#x2F;node_modules&#x2F; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>在项目根目录中添加<code>.babelrc</code>文件，并修改这个配置文件如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;:[&quot;es2015&quot;, &quot;stage-0&quot;],</span><br><span class="line">    &quot;plugins&quot;:[&quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>注意：语法插件<code>babel-preset-es2015</code>可以更新为<code>babel-preset-env</code>，它包含了所有的ES相关的语法；</strong></li>
+</ol>
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="https://www.github.com/qyg2019/2020/01/05/webpack/">https://www.github.com/qyg2019/2020/01/05/webpack/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/webpack/">webpack</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/01/05/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="pre">vue实例的生命周期</a><a href="/2020/01/05/%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" class="next">vue组件的使用</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '0c514abaeb37ce99f0d2',
+  clientSecret: '4dbefaeb4c587a40d19b96566d2e777fa265eb98',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在网页中会引用哪些常见的静态资源？"><span class="toc-text">在网页中会引用哪些常见的静态资源？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网页中引入的静态资源多了以后有什么问题？？？"><span class="toc-text">网页中引入的静态资源多了以后有什么问题？？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决上述两个问题"><span class="toc-text">如何解决上述两个问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是webpack"><span class="toc-text">什么是webpack?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何完美实现上述的2种解决方案"><span class="toc-text">如何完美实现上述的2种解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack安装的两种方式"><span class="toc-text">webpack安装的两种方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初步使用webpack打包构建列表隔行变色案例"><span class="toc-text">初步使用webpack打包构建列表隔行变色案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用webpack的配置文件简化打包时候的命令"><span class="toc-text">使用webpack的配置文件简化打包时候的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现webpack的实时打包构建"><span class="toc-text">实现webpack的实时打包构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用html-webpack-plugin插件配置启动页面"><span class="toc-text">使用html-webpack-plugin插件配置启动页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现自动打开浏览器、热更新和配置浏览器的默认端口号"><span class="toc-text">实现自动打开浏览器、热更新和配置浏览器的默认端口号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式1："><span class="toc-text">方式1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式2："><span class="toc-text">方式2：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用webpack打包css文件"><span class="toc-text">使用webpack打包css文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用webpack打包less文件"><span class="toc-text">使用webpack打包less文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用webpack打包sass文件"><span class="toc-text">使用webpack打包sass文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用webpack处理css中的路径"><span class="toc-text">使用webpack处理css中的路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用babel处理高级JS语法"><span class="toc-text">使用babel处理高级JS语法</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">vue实例的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/webpack/">webpack使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">vue组件的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/">图解MVVM与MVC</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E9%85%8D%E7%BD%AEGit/">配置Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/animate/">vue动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/git%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4/">移动内容的核心Git命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/git/">Git升级模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/git%E5%88%86%E5%B8%83%E5%BC%8F%E5%91%BD%E4%BB%A4%E6%B5%85%E8%B0%88/">分布式版本控制系统Git常用命令浅谈</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/vue-resource/">vue-resource的使用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">11</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>
