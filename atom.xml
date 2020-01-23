@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2019-12-28T14:35:32.761Z</updated>
+  <updated>2020-01-23T07:13:39.594Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>块级作用域绑定</title>
+    <link href="https://www.github.com/qyg2019/2020/01/23/ES6-1/"/>
+    <id>https://www.github.com/qyg2019/2020/01/23/ES6-1/</id>
+    <published>2020-01-23T07:14:38.757Z</published>
+    <updated>2020-01-23T07:13:39.594Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="var声明及变量提升（hoisting机制）"><a href="#var声明及变量提升（hoisting机制）" class="headerlink" title="var声明及变量提升（hoisting机制）"></a>var声明及变量提升（hoisting机制）</h3><p>在函数作用域或者全局作用域中通过<strong>var</strong>声明的变量，无论在哪里声明的，都会被当成是在当前作用域顶部声明的变量，这就是hoisting机制。ES6引入块级作用域来强化对变量生命周期的控制。</p><h3 id="块级声明"><a href="#块级声明" class="headerlink" title="块级声明"></a>块级声明</h3><p>块级声明在指定块的作用域之外无法访问的变量。</p><ul><li>函数内部</li><li>块中（{}之间的区域）</li></ul><h4 id="1-let声明"><a href="#1-let声明" class="headerlink" title="1.  let声明"></a>1.  let声明</h4><ul><li><p>用<strong>let</strong>来代替<strong>var</strong>声明变量，把变量的作用域限制在当前代码块，<strong>let</strong>声明不会被提升，当执行流离开当前块，变量会立刻被销毁。</p></li><li><p>禁止重声明</p><figure class="highlight plain"><figcaption><span>a</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a&#x3D;1;</span><br><span class="line">let a&#x3D;2;  &#x2F;&#x2F;抛出语法错误</span><br></pre></td></tr></table></figure></li></ul><h4 id="2-const声明"><a href="#2-const声明" class="headerlink" title="2.  const声明"></a>2.  const声明</h4><ul><li><strong>const</strong>声明的是常量，其值一旦被设定后不可更改</li><li>使用<strong>const</strong>声明的常量必须初始化，常量同样不会被提升到作用域顶部</li><li>块外执行即刻被销毁</li><li>禁止重声明</li><li>const声明不允许修改绑定，但可以修改值，可以修改声明对象的值</li></ul><h3 id="临时死区（TDZ）"><a href="#临时死区（TDZ）" class="headerlink" title="临时死区（TDZ）"></a>临时死区（TDZ）</h3><p>JavaScript引擎在扫描代码发现变量声明时，要么将变量提升至作用域顶部，要么放到TDZ中访问TDZ中的变量会触发运行时错误。当执行过变量声明语句后，从TDZ中移出，然后才可正常访问。</p><h3 id="var与let，const全局作用域绑定的区别"><a href="#var与let，const全局作用域绑定的区别" class="headerlink" title="var与let，const全局作用域绑定的区别"></a>var与let，const全局作用域绑定的区别</h3><p>当<strong>var</strong>被用于全局作用域时，会创建一个新的全局变量作为全局对象window的属性，这可能会覆盖一个已经存在的全局变量。</p><p>使用<strong>let</strong>, <strong>const</strong>会在全局作用域下创建一个新的绑定，但不会添加为全局对象的属性，不能覆盖全局变量，只能遮盖。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;var声明及变量提升（hoisting机制）&quot;&gt;&lt;a href=&quot;#var声明及变量提升（hoisting机制）&quot; class=&quot;headerlink&quot; title=&quot;var声明及变量提升（hoisting机制）&quot;&gt;&lt;/a&gt;var声明及变量提升（hoisting机
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>vue实例的生命周期</title>
