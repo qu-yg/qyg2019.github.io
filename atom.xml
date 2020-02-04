@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-01-23T07:13:39.594Z</updated>
+  <updated>2020-02-04T06:48:39.108Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字符串和正则表达式</title>
+    <link href="https://www.github.com/qyg2019/2020/02/04/ES6-2/"/>
+    <id>https://www.github.com/qyg2019/2020/02/04/ES6-2/</id>
+    <published>2020-02-04T06:49:43.884Z</published>
+    <updated>2020-02-04T06:48:39.108Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="codePointAt-方法"><a href="#codePointAt-方法" class="headerlink" title="codePointAt()方法"></a>codePointAt()方法</h5><p>ES6新增完全支持UTF-16的方法，接受编码单元位置而非字符位置作为参数，返回对应位置的码位。</p><h5 id="String-fromCodePoint-方法"><a href="#String-fromCodePoint-方法" class="headerlink" title="String.fromCodePoint()方法"></a>String.fromCodePoint()方法</h5><p>根据指定码位生成一个字符。</p><h5 id="normalize-方法"><a href="#normalize-方法" class="headerlink" title="normalize()方法"></a>normalize()方法</h5><p>提供Unicode的标准化形式 。接受一个可选的字符串参数。</p><ul><li>NFC  默认选项</li><li>NFD </li><li>NFKC</li><li>NFKD</li></ul><p>在进行排序和比较操作前，将被操作字符串按照同一标准进行标准化。</p><h4 id="正则表达式u修饰符"><a href="#正则表达式u修饰符" class="headerlink" title="正则表达式u修饰符"></a>正则表达式u修饰符</h4><p>为一个正则表达式添加u修饰符，就从编码操作模式切换为字符模式，就不会视代理对为两个字符。</p><h4 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a>flags属性</h4><p>返回当前正则表达式的修饰字符串</p><figure class="highlight plain"><figcaption><span>reg </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let reg &#x3D; &#x2F;ab&#x2F;g</span><br><span class="line">console.log(reg.flags)   &#x2F;&#x2F;g</span><br><span class="line">console.log(reg.source)  &#x2F;&#x2F;ab</span><br></pre></td></tr></table></figure><h4 id="其他字符串变更"><a href="#其他字符串变更" class="headerlink" title="其他字符串变更"></a>其他字符串变更</h4><ul><li>includes()</li></ul><p>​         在字符串中检测到指定文本返回true</p><ul><li>startswith()</li></ul><p>​         在字符串的起始部分检测到指定文本返回true</p><ul><li><p>endswith()</p><p>  在字符串的起始部分检测到指定文本返回true</p><p>以上的方法都接受两个参数，第二个参数是可选的，如果指定了第二个参数，includes()，startswith()会从这个位置开始匹配，endswith()会从字符串长度减去这个位置开始匹配。  </p></li><li><p>repeat()方法</p></li></ul><p>​         接受一个number类型的参数，表示该字符串重复的次数。</p><h4 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h4><ul><li><p>多行字符串</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let msg &#x3D; &#96;multiline</span><br><span class="line">string&#96;</span><br><span class="line">console.log(msg)   &#x2F;&#x2F;multiline</span><br><span class="line">                   &#x2F;&#x2F;string</span><br></pre></td></tr></table></figure><p>​</p></li><li><p>字符串占位符<strong>${}</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let name &#x3D; &quot;jobs&quot;</span><br><span class="line">let msg &#x3D;  &quot;hello,$&#123;name&#125;&quot;</span><br><span class="line">console.log(msg)    &#x2F;&#x2F; hello,jobs</span><br></pre></td></tr></table></figure><p>​</p></li></ul><p>​      可以把任何合法的javascript表达式嵌入到占位符中作为字符串的一部分输出到结果中</p><ul><li>标签模板</li></ul><p>​       它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;codePointAt-方法&quot;&gt;&lt;a href=&quot;#codePointAt-方法&quot; class=&quot;headerlink&quot; title=&quot;codePointAt()方法&quot;&gt;&lt;/a&gt;codePointAt()方法&lt;/h5&gt;&lt;p&gt;ES6新增完全支持UTF-16的方法，接
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>块级作用域绑定</title>
