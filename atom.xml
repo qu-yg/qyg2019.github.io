@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-08T11:40:31.521Z</updated>
+  <updated>2020-02-08T12:34:56.735Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>扩展对象的功能性</title>
+    <link href="https://www.github.com/qyg2019/2020/02/08/ES6-4/"/>
+    <id>https://www.github.com/qyg2019/2020/02/08/ES6-4/</id>
+    <published>2020-02-08T12:32:39.486Z</published>
+    <updated>2020-02-08T12:34:56.735Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><strong>普通对象</strong>        具有javascript对象所有默认内部行为</li><li><strong>特异对象</strong>         具有某些与默认行为不符的内部行为</li><li><strong>标准对象</strong>         ES6中规范中定义的对象</li><li><strong>内建对象</strong>         脚本执行时存在于JavaScript执行环境中的对象</li></ul><h4 id="属性初始值，对象方法简写"><a href="#属性初始值，对象方法简写" class="headerlink" title="属性初始值，对象方法简写"></a>属性初始值，对象方法简写</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function creat()&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">        name,      &#x2F;&#x2F;相当于 name:name</span><br><span class="line">        age        &#x2F;&#x2F;相当于 age:age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> var person &#x3D; &#123;</span><br><span class="line">     sayName()&#123;</span><br><span class="line">         </span><br><span class="line">         &#x2F;&#x2F;函数体</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><h4 id="新增方法"><a href="#新增方法" class="headerlink" title="新增方法"></a>新增方法</h4><p>Object.is()   弥补全等运算符的不准确运算</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(+0 &#x3D;&#x3D; -0)    &#x2F;&#x2F;true</span><br><span class="line">console.log(+0 &#x3D;&#x3D;&#x3D; -0)   &#x2F;&#x2F;true</span><br><span class="line">console.log(Object.is(+0,-0) )   &#x2F;&#x2F;false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(NaN &#x3D;&#x3D; NaN)   &#x2F;&#x2F;false</span><br><span class="line">console.log(NaN &#x3D;&#x3D;&#x3D; NaN)  &#x2F;&#x2F;false</span><br><span class="line">console.log(Object.is(NaN,NaN))  &#x2F;&#x2F;true</span><br></pre></td></tr></table></figure><p> Object.assign()  接受任意数量的源对象，并按指定顺序将属性复制到接收对象中，排位靠后的同名属性会覆盖靠前的。</p><ul><li>不能将提供者的访问器属性复制到接收对象中</li></ul><h4 id="自有属性枚举顺序"><a href="#自有属性枚举顺序" class="headerlink" title="自有属性枚举顺序"></a>自有属性枚举顺序</h4><ol><li>所有数字键升序排序</li><li>所有字符串按照加入顺序排序</li><li>所有symbol键按照加入顺序排序</li></ol><h4 id="改变对象的原型"><a href="#改变对象的原型" class="headerlink" title="改变对象的原型"></a>改变对象的原型</h4><p>Object.getPrototypeof()   返回指定对象的原型</p><p>Object.setPrototypeof()   改变指定对象的原型    </p><h4 id="super关键字调用对象原型的方法"><a href="#super关键字调用对象原型的方法" class="headerlink" title="super关键字调用对象原型的方法"></a>super关键字调用对象原型的方法</h4><p>​                                                        </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;普通对象&lt;/strong&gt;        具有javascript对象所有默认内部行为&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特异对象&lt;/strong&gt;         具有某些与默认行为不符的内部行为&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准对象&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>函数</title>
