@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>Linux基本命令(五) | yg.qu</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基本命令(五)</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基本命令(五)</h1><div class="post-meta"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A45/#comments" class="comment-count"></a><p><span class="date">Feb 14, 2020</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>日期和时间</p>
+<p>磁盘信息</p>
+<p>文件查找</p>
+<p>软连接</p>
+<h5 id="查看系统时间"><a href="#查看系统时间" class="headerlink" title="查看系统时间"></a>查看系统时间</h5><table>
+<thead>
+<tr>
+<th>date</th>
+<th>查看系统时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cal</td>
+<td>查看日历</td>
+</tr>
+</tbody></table>
+<h5 id="磁盘信息"><a href="#磁盘信息" class="headerlink" title="磁盘信息"></a>磁盘信息</h5><table>
+<thead>
+<tr>
+<th>df  -h</th>
+<th>查看磁盘剩余空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>du - h</td>
+<td>查看目录下文件大小</td>
+</tr>
+</tbody></table>
+<h5 id="进程信息"><a href="#进程信息" class="headerlink" title="进程信息"></a>进程信息</h5><table>
+<thead>
+<tr>
+<th>ps  aux</th>
+<th>查看进程的详细状况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>top</td>
+<td>动态显示运行中的进程并且排序,小写q退出</td>
+</tr>
+<tr>
+<td>kill  [-9] 进程代号</td>
+<td>终止指定代号的进程, -9表示强行终止</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>显示终端上的所有进程,包括其他用户的进程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u</td>
+<td>显示进程的详细状态</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示没有控制终端的进程</td>
+</tr>
+</tbody></table>
+<h5 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h5><table>
+<thead>
+<tr>
+<th>find   [路径] -name “.txt”</th>
+<th>查找指定路径下扩展名是 .txt 的文件,包括子目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h5><table>
+<thead>
+<tr>
+<th>ln -s 被连接的源文件链接文件</th>
+<th>建立文件的软连接, 用通俗的方式讲 <strong>类似于 Windows</strong> 下的<strong>快捷方式</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>在使用 ln 创建链接时, 如果没有 -s 选项,  会创建一个 硬链接 ,  而不是软连接<br>在 Linux 中, 文件名 和 文件的数据 是分开储存的</p>
+<p>在 Linux 中,  只有文件的 硬链接数 ==0 才会被删除, 就是说存在硬链接,即使删除了文件名,文件还在<br>使用 ls -l 可以查看一个文件的硬链接的数量</p>
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="https://www.github.com/qyg2019/2020/02/14/Linux基本命令5/">https://www.github.com/qyg2019/2020/02/14/Linux基本命令5/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/" class="next">Linux基本命令(四)</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '0c514abaeb37ce99f0d2',
+  clientSecret: '4dbefaeb4c587a40d19b96566d2e777fa265eb98',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看系统时间"><span class="toc-text">查看系统时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#磁盘信息"><span class="toc-text">磁盘信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程信息"><span class="toc-text">进程信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查找文件"><span class="toc-text">查找文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#软连接"><span class="toc-text">软连接</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A45/">Linux基本命令(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/">Linux基本命令(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/">Linux基本命令(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/">Linux基本命令(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/">Linux基本命令(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-4/">扩展对象的功能性</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-3/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/04/ES6-2/">字符串和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/23/ES6-1/">块级作用域绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">vue实例的生命周期</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">20</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>

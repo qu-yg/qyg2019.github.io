@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-14T12:53:09.154Z</updated>
+  <updated>2020-02-14T13:09:14.734Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux基本命令(五)</title>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A45/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A45/</id>
+    <published>2020-02-14T13:05:27.177Z</published>
+    <updated>2020-02-14T13:09:14.734Z</updated>
+    
+    <content type="html"><![CDATA[<p>日期和时间</p><p>磁盘信息</p><p>文件查找</p><p>软连接</p><h5 id="查看系统时间"><a href="#查看系统时间" class="headerlink" title="查看系统时间"></a>查看系统时间</h5><table><thead><tr><th>date</th><th>查看系统时间</th></tr></thead><tbody><tr><td>cal</td><td>查看日历</td></tr></tbody></table><h5 id="磁盘信息"><a href="#磁盘信息" class="headerlink" title="磁盘信息"></a>磁盘信息</h5><table><thead><tr><th>df  -h</th><th>查看磁盘剩余空间</th></tr></thead><tbody><tr><td>du - h</td><td>查看目录下文件大小</td></tr></tbody></table><h5 id="进程信息"><a href="#进程信息" class="headerlink" title="进程信息"></a>进程信息</h5><table><thead><tr><th>ps  aux</th><th>查看进程的详细状况</th></tr></thead><tbody><tr><td>top</td><td>动态显示运行中的进程并且排序,小写q退出</td></tr><tr><td>kill  [-9] 进程代号</td><td>终止指定代号的进程, -9表示强行终止</td></tr></tbody></table><table><thead><tr><th>a</th><th>显示终端上的所有进程,包括其他用户的进程</th></tr></thead><tbody><tr><td>u</td><td>显示进程的详细状态</td></tr><tr><td>x</td><td>显示没有控制终端的进程</td></tr></tbody></table><h5 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h5><table><thead><tr><th>find   [路径] -name “.txt”</th><th>查找指定路径下扩展名是 .txt 的文件,包括子目录</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><h5 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h5><table><thead><tr><th>ln -s 被连接的源文件链接文件</th><th>建立文件的软连接, 用通俗的方式讲 <strong>类似于 Windows</strong> 下的<strong>快捷方式</strong></th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><p>在使用 ln 创建链接时, 如果没有 -s 选项,  会创建一个 硬链接 ,  而不是软连接<br>在 Linux 中, 文件名 和 文件的数据 是分开储存的</p><p>在 Linux 中,  只有文件的 硬链接数 ==0 才会被删除, 就是说存在硬链接,即使删除了文件名,文件还在<br>使用 ls -l 可以查看一个文件的硬链接的数量</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;日期和时间&lt;/p&gt;
+&lt;p&gt;磁盘信息&lt;/p&gt;
+&lt;p&gt;文件查找&lt;/p&gt;
+&lt;p&gt;软连接&lt;/p&gt;
+&lt;h5 id=&quot;查看系统时间&quot;&gt;&lt;a href=&quot;#查看系统时间&quot; class=&quot;headerlink&quot; title=&quot;查看系统时间&quot;&gt;&lt;/a&gt;查看系统时间&lt;/h5&gt;&lt;table&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux基本命令(四)</title>
