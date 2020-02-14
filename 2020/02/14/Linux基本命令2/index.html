@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>Linux基本命令(二) | yg.qu</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基本命令(二)</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基本命令(二)</h1><div class="post-meta"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/#comments" class="comment-count"></a><p><span class="date">Feb 14, 2020</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h5 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h5><p>敲出 命令/目录/文件  的前几个字母 ,  按下 Tab 键，快速补全<br>按  上 / 下  光标,可以再曾经使用过的命令之间来回切换.<br>退出选择, 不执行当前命令,按    ctrl  +  c</p>
+<h5 id="ls命令说明"><a href="#ls命令说明" class="headerlink" title="ls命令说明"></a>ls命令说明</h5><p>ls是list 的简写, 列出文件夹目录,  ps: 用得最多的命令</p>
+<p>Linux下文件和目录的特点：</p>
+<p>Linux 文件 或者 目录 名称最长可以有 256 个字符<br>以 . (点)开头的文件为隐藏文件,  需要用 -a 参数才能显示<br> .(点)  代表当前目录<br> .. (两个点)  代表上一级目录</p>
+<h5 id="ls常用选项"><a href="#ls常用选项" class="headerlink" title="ls常用选项"></a>ls常用选项</h5><table>
+<thead>
+<tr>
+<th>-a</th>
+<th>显示指定目录下所有子目录与文件,包括隐藏文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l</td>
+<td>以列表方式显示文件的详细信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>配合 -l 以人性化的方式显示文件大小</td>
+</tr>
+</tbody></table>
+<h5 id="命令-cd"><a href="#命令-cd" class="headerlink" title="命令 cd"></a>命令 cd</h5><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>切换到当前用户的主要目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>切换到当前用户的主要目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd .</td>
+<td>保持在当前目录不变</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>最近两个目录来回切</td>
+</tr>
+</tbody></table>
+<p>相对路径  在输入路径时,  最前面不是 / 或者 - ,表示相对 当前目录 所在的目录位置<br>绝对路径  在输入路径时,  最前面是 / 或者 - ,表示从 根目录/家目录 开始的具体目录位置</p>
+<h5 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h5><p>创建一个新的目录</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>递归创建目录</td>
+</tr>
+</tbody></table>
+<p>创建 mkdir -p a/b/c   </p>
+<h5 id="命令rm"><a href="#命令rm" class="headerlink" title="命令rm"></a>命令rm</h5><p>删除文件或目录</p>
+<p> 使用rm删除不能恢复</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>强制删除, 忽略不存在的文件, 无需提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归地删除目录下的内容, 删除文件夹 时必须加此参数</td>
+</tr>
+</tbody></table>
+<h5 id="拷贝和移动文件"><a href="#拷贝和移动文件" class="headerlink" title="拷贝和移动文件"></a>拷贝和移动文件</h5><table>
+<thead>
+<tr>
+<th>tree[目录名]</th>
+<th>以树状图列出文件目录结构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cp 源文件 目标文件</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>mv 源文件 目标文件</td>
+<td>移动文件或者目录 / 文件或者目录重命名</td>
+</tr>
+</tbody></table>
+<h5 id="cp选项"><a href="#cp选项" class="headerlink" title="cp选项"></a>cp选项</h5><table>
+<thead>
+<tr>
+<th>-f</th>
+<th>已经存在的目标文件直接覆盖,  不会提示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件, 则 cp 将递归复制该目录下的所有子目录和文件,目标文件必须是一个目录名</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody></table>
+<h5 id="mv选项"><a href="#mv选项" class="headerlink" title="mv选项"></a>mv选项</h5><table>
+<thead>
+<tr>
+<th>-i</th>
+<th>覆盖文件前提示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h5><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cat</td>
+<td>查看文件内容,创建文件,文件合并,追加文件内容等功能</td>
+</tr>
+<tr>
+<td>more</td>
+<td>分屏显示文件内容</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>搜索文本文件内容</td>
+</tr>
+</tbody></table>
+<h5 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h5><p>cat 会一次显示所有的内容, 适合 查看内容较少 的文本文件</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>对非空输出行编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>对输出的所有行编号</td>
+</tr>
+</tbody></table>
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>Linux 系统中 grep 命令是一种强大的文本搜索工具<br>grep 允许文本文件进行 模式查找, 所谓模式查找,  又被称为正则表达式,</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n</td>
+<td>显示匹配行及行号</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示不包含匹配文本的所有行(相当于求反)</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写</td>
+</tr>
+</tbody></table>
+<p>常用的两种模式查找</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^a</td>
+<td>搜寻以a 开头的行</td>
+</tr>
+<tr>
+<td>b$</td>
+<td>搜寻以b 结束的行</td>
+</tr>
+</tbody></table>
+<p>gedit 目录名/文件名 直接打开文件</p>
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="https://www.github.com/qyg2019/2020/02/14/Linux基本命令2/">https://www.github.com/qyg2019/2020/02/14/Linux基本命令2/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/" class="next">Linux基本命令(一)</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '0c514abaeb37ce99f0d2',
+  clientSecret: '4dbefaeb4c587a40d19b96566d2e777fa265eb98',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#实用技巧"><span class="toc-text">实用技巧</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ls命令说明"><span class="toc-text">ls命令说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ls常用选项"><span class="toc-text">ls常用选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令-cd"><span class="toc-text">命令 cd</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mkdir"><span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令rm"><span class="toc-text">命令rm</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#拷贝和移动文件"><span class="toc-text">拷贝和移动文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cp选项"><span class="toc-text">cp选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mv选项"><span class="toc-text">mv选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看文件内容"><span class="toc-text">查看文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cat命令"><span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grep命令"><span class="toc-text">grep命令</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/">Linux基本命令(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/">Linux基本命令(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-4/">扩展对象的功能性</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-3/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/04/ES6-2/">字符串和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/23/ES6-1/">块级作用域绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">vue实例的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/webpack/">webpack使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">vue组件的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E5%9B%BE%E8%A7%A3MVVM%E4%B8%8EMVC/">图解MVVM与MVC</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">17</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>

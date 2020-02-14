@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-14T07:23:12.360Z</updated>
+  <updated>2020-02-14T07:54:06.081Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux基本命令(二)</title>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/</id>
+    <published>2020-02-14T07:54:28.185Z</published>
+    <updated>2020-02-14T07:54:06.081Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h5><p>敲出 命令/目录/文件  的前几个字母 ,  按下 Tab 键，快速补全<br>按  上 / 下  光标,可以再曾经使用过的命令之间来回切换.<br>退出选择, 不执行当前命令,按    ctrl  +  c</p><h5 id="ls命令说明"><a href="#ls命令说明" class="headerlink" title="ls命令说明"></a>ls命令说明</h5><p>ls是list 的简写, 列出文件夹目录,  ps: 用得最多的命令</p><p>Linux下文件和目录的特点：</p><p>Linux 文件 或者 目录 名称最长可以有 256 个字符<br>以 . (点)开头的文件为隐藏文件,  需要用 -a 参数才能显示<br> .(点)  代表当前目录<br> .. (两个点)  代表上一级目录</p><h5 id="ls常用选项"><a href="#ls常用选项" class="headerlink" title="ls常用选项"></a>ls常用选项</h5><table><thead><tr><th>-a</th><th>显示指定目录下所有子目录与文件,包括隐藏文件</th></tr></thead><tbody><tr><td>-l</td><td>以列表方式显示文件的详细信息</td></tr><tr><td>-h</td><td>配合 -l 以人性化的方式显示文件大小</td></tr></tbody></table><h5 id="命令-cd"><a href="#命令-cd" class="headerlink" title="命令 cd"></a>命令 cd</h5><table><thead><tr><th>命令</th><th>含义</th></tr></thead><tbody><tr><td>cd</td><td>切换到当前用户的主要目录(/home/用户目录)</td></tr><tr><td>cd ~</td><td>切换到当前用户的主要目录(/home/用户目录)</td></tr><tr><td>cd .</td><td>保持在当前目录不变</td></tr><tr><td>cd ..</td><td>切换到上级目录</td></tr><tr><td>cd -</td><td>最近两个目录来回切</td></tr></tbody></table><p>相对路径  在输入路径时,  最前面不是 / 或者 - ,表示相对 当前目录 所在的目录位置<br>绝对路径  在输入路径时,  最前面是 / 或者 - ,表示从 根目录/家目录 开始的具体目录位置</p><h5 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h5><p>创建一个新的目录</p><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-p</td><td>递归创建目录</td></tr></tbody></table><p>创建 mkdir -p a/b/c   </p><h5 id="命令rm"><a href="#命令rm" class="headerlink" title="命令rm"></a>命令rm</h5><p>删除文件或目录</p><p> 使用rm删除不能恢复</p><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-f</td><td>强制删除, 忽略不存在的文件, 无需提示</td></tr><tr><td>-r</td><td>递归地删除目录下的内容, 删除文件夹 时必须加此参数</td></tr></tbody></table><h5 id="拷贝和移动文件"><a href="#拷贝和移动文件" class="headerlink" title="拷贝和移动文件"></a>拷贝和移动文件</h5><table><thead><tr><th>tree[目录名]</th><th>以树状图列出文件目录结构</th></tr></thead><tbody><tr><td>cp 源文件 目标文件</td><td>复制文件或目录</td></tr><tr><td>mv 源文件 目标文件</td><td>移动文件或者目录 / 文件或者目录重命名</td></tr></tbody></table><h5 id="cp选项"><a href="#cp选项" class="headerlink" title="cp选项"></a>cp选项</h5><table><thead><tr><th>-f</th><th>已经存在的目标文件直接覆盖,  不会提示</th></tr></thead><tbody><tr><td>-r</td><td>若给出的源文件是目录文件, 则 cp 将递归复制该目录下的所有子目录和文件,目标文件必须是一个目录名</td></tr><tr><td>-i</td><td>覆盖文件前提示</td></tr></tbody></table><h5 id="mv选项"><a href="#mv选项" class="headerlink" title="mv选项"></a>mv选项</h5><table><thead><tr><th>-i</th><th>覆盖文件前提示</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><h5 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h5><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>cat</td><td>查看文件内容,创建文件,文件合并,追加文件内容等功能</td></tr><tr><td>more</td><td>分屏显示文件内容</td></tr><tr><td>grep</td><td>搜索文本文件内容</td></tr></tbody></table><h5 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h5><p>cat 会一次显示所有的内容, 适合 查看内容较少 的文本文件</p><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-b</td><td>对非空输出行编号</td></tr><tr><td>-n</td><td>对输出的所有行编号</td></tr></tbody></table><h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>Linux 系统中 grep 命令是一种强大的文本搜索工具<br>grep 允许文本文件进行 模式查找, 所谓模式查找,  又被称为正则表达式,</p><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-n</td><td>显示匹配行及行号</td></tr><tr><td>-v</td><td>显示不包含匹配文本的所有行(相当于求反)</td></tr><tr><td>-i</td><td>忽略大小写</td></tr></tbody></table><p>常用的两种模式查找</p><table><thead><tr><th>参数</th><th>作用</th></tr></thead><tbody><tr><td>^a</td><td>搜寻以a 开头的行</td></tr><tr><td>b$</td><td>搜寻以b 结束的行</td></tr></tbody></table><p>gedit 目录名/文件名 直接打开文件</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;实用技巧&quot;&gt;&lt;a href=&quot;#实用技巧&quot; class=&quot;headerlink&quot; title=&quot;实用技巧&quot;&gt;&lt;/a&gt;实用技巧&lt;/h5&gt;&lt;p&gt;敲出 命令/目录/文件  的前几个字母 ,  按下 Tab 键，快速补全&lt;br&gt;按  上 / 下  光标,可以再曾经使用过的
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux基本命令(一)</title>
-    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
-    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</id>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/</id>
     <published>2020-02-14T06:57:40.743Z</published>
     <updated>2020-02-14T07:23:12.360Z</updated>
     
