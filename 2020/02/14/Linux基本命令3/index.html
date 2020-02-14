@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>Linux基本命令(三) | yg.qu</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基本命令(三)</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基本命令(三)</h1><div class="post-meta"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/#comments" class="comment-count"></a><p><span class="date">Feb 14, 2020</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h5 id="shutdown命令"><a href="#shutdown命令" class="headerlink" title="shutdown命令"></a>shutdown命令</h5><p>可以 安全 关闭 或者 重新启动系统</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shutdown  选项  时间</td>
+<td>关机或重新启动</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>重新启动</td>
+</tr>
+</tbody></table>
+<ul>
+<li>不指定选项和参数, 默认表示 <strong>1 分钟</strong> 之后 <strong>关闭电脑</strong></li>
+<li>远程维护服务器时, 最好不要关闭系统, 而应该重新启动系统</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ shutdown -r now   &#x2F;&#x2F;现在重启</span><br><span class="line"></span><br><span class="line">$ shutdown  now    &#x2F;&#x2F;现在关机</span><br><span class="line"></span><br><span class="line">$ shutdown 20:00  &#x2F;&#x2F;20：00关机</span><br><span class="line"></span><br><span class="line">$ shutdown +10  &#x2F;&#x2F;10分钟后关机</span><br><span class="line"></span><br><span class="line">$ shutdown -c  &#x2F;&#x2F;取消</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h5><p>可以查看  /  配置计算机当前的网卡配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ifconfig  |  grep  inet</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h5><p> 一般用于检测当前计算机到目标计算机之间的网络  是否通畅,  数值越大,  速度越慢</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ping wwww.baidu.com           &#x2F;&#x2F;或者IP地址</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="远程登录和远程复制文件"><a href="#远程登录和远程复制文件" class="headerlink" title="远程登录和远程复制文件"></a>远程登录和远程复制文件</h5><table>
+<thead>
+<tr>
+<th>ssh   用户名@ip地址</th>
+<th>登录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>scp  源    目的</td>
+<td>远程复制文件</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>ssh服务器</th>
+<th>22</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>web服务器</td>
+<td>80</td>
+</tr>
+<tr>
+<td>https</td>
+<td>443</td>
+</tr>
+<tr>
+<td>ftp</td>
+<td>21</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit     &#x2F;&#x2F;退出登录</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -P port 123.txt user@remote:Desktop&#x2F;123.txt</span><br><span class="line"></span><br><span class="line">#  把远程 家目录下的 Desktop&#x2F;123.txt 文件  复制到 本地当前目录下的 123.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>scp 这个终端命令只能在 Linux 或者 UNIX 系统下使用</li>
+<li>如果在 Windows 系统中,  可以安装 PuTTY, 使用 pscp 命令行工具或者安装 FileZilla 使用 FTP 进行文件传输</li>
+</ul>
+<h5 id="SSH-高级"><a href="#SSH-高级" class="headerlink" title="SSH 高级"></a>SSH 高级</h5><p>免密码登录<br>配置别名<br>   有关 SSH 配置信息都保存在用户家目录下的 .ssh 目录下</p>
+<p>配置公钥<br>       执行 ssh-keygen 即可生成 SSH 钥匙,  一路回车即可</p>
+<p>上传公钥到服务器<br>       执行 ssh-copy-id -p port user@remote, 可以让远程服务器记住我们的公钥 </p>
+<p> 带pub的是公钥(public)</p>
+<p>a. 客户端执行 ssh-copy-id -p port user@remote, 可以让远程服务器记住我们的公钥 ,客户端=&gt;私钥,服务端=&gt;公钥</p>
+<p>b. 客户端发送数据给服务端时通过 私钥加密,  服务端通过 公钥解密 发送过来的数据.</p>
+<p>c. 服务端发送数据给客户端时通过 公钥解密 ,  客户端通过 私钥解密 发送过来的数据.</p>
+<p>2)  配置别名 </p>
+<p>在 ~/.ssh/config 里面追加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Host mac &#x2F;&#x2F;指定别名</span><br><span class="line"></span><br><span class="line">    HostName  ip地址</span><br><span class="line"></span><br><span class="line">    User  用户名</span><br><span class="line"></span><br><span class="line">    port 22</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="https://www.github.com/qyg2019/2020/02/14/Linux基本命令3/">https://www.github.com/qyg2019/2020/02/14/Linux基本命令3/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" class="next">Linux基本命令(二)</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '0c514abaeb37ce99f0d2',
+  clientSecret: '4dbefaeb4c587a40d19b96566d2e777fa265eb98',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#shutdown命令"><span class="toc-text">shutdown命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ifconfig"><span class="toc-text">ifconfig</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#远程登录和远程复制文件"><span class="toc-text">远程登录和远程复制文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SSH-高级"><span class="toc-text">SSH 高级</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/">Linux基本命令(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/">Linux基本命令(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/">Linux基本命令(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-4/">扩展对象的功能性</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-3/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/04/ES6-2/">字符串和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/23/ES6-1/">块级作用域绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">vue实例的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/webpack/">webpack使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">vue组件的使用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">18</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>

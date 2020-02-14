@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-14T07:59:48.442Z</updated>
+  <updated>2020-02-14T08:39:45.442Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux基本命令(三)</title>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/</id>
+    <published>2020-02-14T08:40:05.059Z</published>
+    <updated>2020-02-14T08:39:45.442Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="shutdown命令"><a href="#shutdown命令" class="headerlink" title="shutdown命令"></a>shutdown命令</h5><p>可以 安全 关闭 或者 重新启动系统</p><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>shutdown  选项  时间</td><td>关机或重新启动</td></tr></tbody></table><table><thead><tr><th>选项</th><th>作用</th></tr></thead><tbody><tr><td>-r</td><td>重新启动</td></tr></tbody></table><ul><li>不指定选项和参数, 默认表示 <strong>1 分钟</strong> 之后 <strong>关闭电脑</strong></li><li>远程维护服务器时, 最好不要关闭系统, 而应该重新启动系统</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ shutdown -r now   &#x2F;&#x2F;现在重启</span><br><span class="line"></span><br><span class="line">$ shutdown  now    &#x2F;&#x2F;现在关机</span><br><span class="line"></span><br><span class="line">$ shutdown 20:00  &#x2F;&#x2F;20：00关机</span><br><span class="line"></span><br><span class="line">$ shutdown +10  &#x2F;&#x2F;10分钟后关机</span><br><span class="line"></span><br><span class="line">$ shutdown -c  &#x2F;&#x2F;取消</span><br></pre></td></tr></table></figure><h5 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h5><p>可以查看  /  配置计算机当前的网卡配置信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ifconfig  |  grep  inet</span><br></pre></td></tr></table></figure><h5 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h5><p> 一般用于检测当前计算机到目标计算机之间的网络  是否通畅,  数值越大,  速度越慢</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  ping wwww.baidu.com           &#x2F;&#x2F;或者IP地址</span><br></pre></td></tr></table></figure><h5 id="远程登录和远程复制文件"><a href="#远程登录和远程复制文件" class="headerlink" title="远程登录和远程复制文件"></a>远程登录和远程复制文件</h5><table><thead><tr><th>ssh   用户名@ip地址</th><th>登录</th></tr></thead><tbody><tr><td>scp  源    目的</td><td>远程复制文件</td></tr></tbody></table><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure><table><thead><tr><th>ssh服务器</th><th>22</th></tr></thead><tbody><tr><td>web服务器</td><td>80</td></tr><tr><td>https</td><td>443</td></tr><tr><td>ftp</td><td>21</td></tr></tbody></table><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit     &#x2F;&#x2F;退出登录</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp -P port 123.txt user@remote:Desktop&#x2F;123.txt</span><br><span class="line"></span><br><span class="line">#  把远程 家目录下的 Desktop&#x2F;123.txt 文件  复制到 本地当前目录下的 123.txt</span><br></pre></td></tr></table></figure><ul><li>scp 这个终端命令只能在 Linux 或者 UNIX 系统下使用</li><li>如果在 Windows 系统中,  可以安装 PuTTY, 使用 pscp 命令行工具或者安装 FileZilla 使用 FTP 进行文件传输</li></ul><h5 id="SSH-高级"><a href="#SSH-高级" class="headerlink" title="SSH 高级"></a>SSH 高级</h5><p>免密码登录<br>配置别名<br>   有关 SSH 配置信息都保存在用户家目录下的 .ssh 目录下</p><p>配置公钥<br>       执行 ssh-keygen 即可生成 SSH 钥匙,  一路回车即可</p><p>上传公钥到服务器<br>       执行 ssh-copy-id -p port user@remote, 可以让远程服务器记住我们的公钥 </p><p> 带pub的是公钥(public)</p><p>a. 客户端执行 ssh-copy-id -p port user@remote, 可以让远程服务器记住我们的公钥 ,客户端=&gt;私钥,服务端=&gt;公钥</p><p>b. 客户端发送数据给服务端时通过 私钥加密,  服务端通过 公钥解密 发送过来的数据.</p><p>c. 服务端发送数据给客户端时通过 公钥解密 ,  客户端通过 私钥解密 发送过来的数据.</p><p>2)  配置别名 </p><p>在 ~/.ssh/config 里面追加以下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Host mac &#x2F;&#x2F;指定别名</span><br><span class="line"></span><br><span class="line">    HostName  ip地址</span><br><span class="line"></span><br><span class="line">    User  用户名</span><br><span class="line"></span><br><span class="line">    port 22</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;shutdown命令&quot;&gt;&lt;a href=&quot;#shutdown命令&quot; class=&quot;headerlink&quot; title=&quot;shutdown命令&quot;&gt;&lt;/a&gt;shutdown命令&lt;/h5&gt;&lt;p&gt;可以 安全 关闭 或者 重新启动系统&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux基本命令(二)</title>
