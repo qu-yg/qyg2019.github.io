@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-08T12:34:56.735Z</updated>
+  <updated>2020-02-14T07:23:12.360Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux基本命令(一)</title>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-02-14T06:57:40.743Z</published>
+    <updated>2020-02-14T07:23:12.360Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><table><thead><tr><th>1</th><th>ls</th><th>list</th><th>查看当前文件夹下的内容</th></tr></thead><tbody><tr><td>2</td><td>pwd</td><td>print work direction</td><td>查看当前所在文件夹</td></tr><tr><td>3</td><td>cd[目录名]</td><td>change direction</td><td>切换文件夹</td></tr><tr><td>4</td><td>touch[文件名]</td><td>touch</td><td>如果文件不存在，创建文件</td></tr><tr><td>5</td><td>mkdir[目录名]</td><td>make direction</td><td>创建目录，新建文件夹</td></tr><tr><td>6</td><td>rm[文件名]</td><td>remove</td><td>删除指定的文件名</td></tr><tr><td>7</td><td>clear</td><td>clear</td><td>清屏</td></tr></tbody></table><h5 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h5><table><thead><tr><th>ctrl  shift   =</th><th>放大终端窗口的字体显示</th></tr></thead><tbody><tr><td>ctrl    -</td><td>缩小终端窗口的字体显示</td></tr></tbody></table><h4 id="终端命令的格式"><a href="#终端命令的格式" class="headerlink" title="终端命令的格式"></a>终端命令的格式</h4><p>command  [-options]  parameter </p><p>(选择目录 : cd 目录名称)</p><p>(删除目录 : rm -r 目录名字)</p><p>command :  命令名    (ls  ,pwd   ,clear …..)<br>[-options] : 选项,可省略    [ ]代表可选<br>parameter :传给命令的参数   (文件夹名等…)</p><p>####查看帮助</p><p> –help    语法 :  command –help<br>  man     语法 : man command  </p><p>使用man时的操作键</p><table><thead><tr><th>操作键</th><th>功能</th></tr></thead><tbody><tr><td>空格</td><td>下一页内容</td></tr><tr><td>b</td><td>回滚一页</td></tr><tr><td>f</td><td>前进一页b</td></tr><tr><td>q</td><td>退出</td></tr><tr><td>enter</td><td>滚动一行</td></tr></tbody></table><h4 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="文件和目录常用命令"></a>文件和目录常用命令</h4><table><thead><tr><th>删除操作</th><th>rm</th></tr></thead><tbody><tr><td>拷贝文件</td><td>cp</td></tr><tr><td>移动文件</td><td>mv</td></tr><tr><td>查看文件内容</td><td>cat        more</td></tr><tr><td>搜索</td><td>grep</td></tr><tr><td>重定向</td><td>&gt;</td></tr><tr><td>追加内容</td><td>&gt; &gt;</td></tr><tr><td>管道</td><td>|</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;基本命令&quot;&gt;&lt;a href=&quot;#基本命令&quot; class=&quot;headerlink&quot; title=&quot;基本命令&quot;&gt;&lt;/a&gt;基本命令&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;ls&lt;/th&gt;
+&lt;th&gt;list&lt;/th&gt;
+&lt;th&gt;查看当
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>扩展对象的功能性</title>
