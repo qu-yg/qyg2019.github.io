@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style-dark.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/css/highlight-dark.css?v=2.0.4"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://unpkg.com/gitalk/dist/gitalk.css?v=2.0.4"><title>Linux基本命令(四) | yg.qu</title><meta name="generator" content="Hexo 4.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux基本命令(四)</h1><a id="logo" href="/.">yg.qu</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Linux基本命令(四)</h1><div class="post-meta"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/#comments" class="comment-count"></a><p><span class="date">Feb 14, 2020</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h5 id="用户-和-权限-的概念"><a href="#用户-和-权限-的概念" class="headerlink" title="用户 和 权限 的概念"></a>用户 和 权限 的概念</h5><p>用户 是Linux 系统工作中中的一环, 用户管理包括 用户 和 组 管理<br>在 Linux 系统中,  不论是由本级或是远程登录系统,  每个系统都必须有一个账号, 并且对于不同的系统资源有不同的使用权限<br>在 Linux 中, 可以指定 每一个用户 针对 不同的文件或者目录 的不同权限<br>对 文件 / 目录 的权限包括:</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>缩写</th>
+<th>代号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读</td>
+<td>r</td>
+<td>4</td>
+</tr>
+<tr>
+<td>写</td>
+<td>w</td>
+<td>2</td>
+</tr>
+<tr>
+<td>执行</td>
+<td>x</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h5 id="组"><a href="#组" class="headerlink" title="组"></a>组</h5><p>在实际应用中, 可以预先对 组 设置好权限, 然后 将不同的用户添加到对应的组中, 从而不用一次为每一个用户设置</p>
+<h5 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h5><p>chmod 简单使用</p>
+<p>chmod 可以修改 用户 / 组 对 文件 / 目录 的权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +&#x2F;-rwx 文件名|目录名</span><br></pre></td></tr></table></figure>
+
+<p> 超级用户</p>
+<p>Linux  系统中的 root 账号通常 用于系统的维护和管理 ,  对操作系统的所有资源 具有所有访问权限<br>在大多数版本的 Linux 中 , 都不推荐 直接使用 root 账号登录系统<br>在 Linux 安装的过程中, 系统会自动创建一个用户账号,  而这个默认的用户就称为 “标准用户” </p>
+<h5 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h5><p>su 是 substitute user 的缩写,  表示 使用另一个用户的身份<br>sudo 命令来以其他身份来执行命令,  预设的身份为 root<br>用户使用 sudo 时,必须先输入密码,  之后有5分钟的有效期限,  超过期限则必须重新输入密码</p>
+<h5 id="组管理-终端命令"><a href="#组管理-终端命令" class="headerlink" title="组管理 终端命令"></a>组管理 终端命令</h5><p>创建组 / 删除组 的终端命令都需要通过 sudo 执行</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>groupadd</td>
+<td>添加组</td>
+</tr>
+<tr>
+<td>groupdel</td>
+<td>删除组</td>
+</tr>
+<tr>
+<td>chgrp</td>
+<td>修改文件 / 目录的所属组</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp 组名  文件 &#x2F; 目录名	修改文件 &#x2F; 目录的所属组</span><br></pre></td></tr></table></figure>
+
+<p>组信息保存在 /etc/group 文件中</p>
+<h5 id="创建用户-设置密码-删除用户"><a href="#创建用户-设置密码-删除用户" class="headerlink" title="创建用户 / 设置密码 / 删除用户"></a>创建用户 / 设置密码 / 删除用户</h5><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>useradd -m -g     新建用户名</td>
+<td>添加新用户     -m 自动建立用户家目录</td>
+</tr>
+<tr>
+<td>passwd  用户名</td>
+<td>设置用户密码    如果是普通用户, 直接用 passwd 可以修改自己的账户密码</td>
+</tr>
+<tr>
+<td>userdel  -r  用户名</td>
+<td>删除用户    -r 选项会自动删除用户家目录</td>
+</tr>
+</tbody></table>
+<p>创建用户时, 如果忘记添加 -m 选项指定新用户的家目录 — 最简单的方法就是删除用户,  重新创建<br>创建用户时, 默认会创建一个和用户名同名的组名<br>用户信息保存在 /etc/passwd 文件中</p>
+<h5 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h5><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id   [用户名]</td>
+<td>查看用户 UID 和 GID 信息</td>
+</tr>
+<tr>
+<td>who</td>
+<td>查看当前所有登录的用户列表</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>查看当前登录用户的账户名</td>
+</tr>
+</tbody></table>
+<p>passwd 文件</p>
+<p>/etc/passwd  文件存放的是用户的信息, 由 6 个分号组成的 7 个信息,  分别是</p>
+<p>用户名<br>密码 (x,  表示加密的密码)<br>UID (用户标识)<br>GID (组标识)<br>用户全名 或 本地账号<br>家目录<br>登录使用的 Shell , 就是登录之后,  使用的终端命令,  ubuntu 默认是 dash</p>
+<p>usermod </p>
+<p>usermod 可以用来设置 用户 的 主组 / 附加组 和 登录 Shell,  命令格式如下 :<br>主组 : 通常在新建用户时指定, 在etc / passwd 的第 4 列 GID 对应的组<br>附加组 : 在 etc / group 中最后一列表示该组的用户列表, 用于指定 用户的附加权限</p>
+<p>设置了用户的附加组之后, 需要重新登录才能生效</p>
+<h5 id="修改用户主组"><a href="#修改用户主组" class="headerlink" title="修改用户主组"></a>修改用户主组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -g  组  用户名</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改用户附加组"><a href="#修改用户附加组" class="headerlink" title="修改用户附加组"></a>修改用户附加组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -G  组  用户名</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改用户登录shell"><a href="#修改用户登录shell" class="headerlink" title="修改用户登录shell"></a>修改用户登录shell</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -s  &#x2F;bin&#x2F;bash  用户名</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="which"><a href="#which" class="headerlink" title="which"></a><strong>which</strong></h5><p>查看执行命令所在位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">which ls      &#x2F;&#x2F;      &#x2F;bin&#x2F;ls</span><br><span class="line"></span><br><span class="line">which useradd    &#x2F;&#x2F;    &#x2F;usr&#x2F;sbin&#x2F;useradd</span><br></pre></td></tr></table></figure>
+
+<p>bin 和 sbin</p>
+<p>在 Linux 中, 绝大多数可执行文件都是保存在 /bin , /sbin , /usr/bin , /usr/sbin<br>/bin (binary) 是二进制执行文件目录, 主要用于具体应用<br>/sbin (system binary) 是系统管理员专用的二进制代码存放目录,  主要用于系统管理<br>/usr/bin (user commands for applications) 后期安装的一些软件<br>/usr/sbin (super user commands for applications) 超级用户的一些管理程序</p>
+<h5 id="切换用户su"><a href="#切换用户su" class="headerlink" title="切换用户su"></a>切换用户su</h5><table>
+<thead>
+<tr>
+<th>su -用户名</th>
+<th>切换用户</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>su 不接用户名,  可以切换到 root</p>
+<h5 id="修改文件属性"><a href="#修改文件属性" class="headerlink" title="修改文件属性"></a>修改文件属性</h5><table>
+<thead>
+<tr>
+<th>chown</th>
+<th>修改拥有着</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>chgrp</td>
+<td>修改组</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>修改权限</td>
+</tr>
+</tbody></table>
+<p>chmod的数字表示</p>
+<table>
+<thead>
+<tr>
+<th>拥有着</th>
+<th>组用户</th>
+<th>其他用户</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rwx</td>
+<td>rwx</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>421</td>
+<td>421</td>
+<td>421</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>000</th>
+<th>0</th>
+<th>—</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>001</td>
+<td>1</td>
+<td>–x</td>
+</tr>
+<tr>
+<td>020</td>
+<td>2</td>
+<td>-w-</td>
+</tr>
+<tr>
+<td>021</td>
+<td>3</td>
+<td>-wx</td>
+</tr>
+<tr>
+<td>400</td>
+<td>4</td>
+<td>r–</td>
+</tr>
+<tr>
+<td>401</td>
+<td>5</td>
+<td>r-x</td>
+</tr>
+<tr>
+<td>420</td>
+<td>6</td>
+<td>rw-</td>
+</tr>
+<tr>
+<td>421</td>
+<td>7</td>
+<td>rwx</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod  741 文件名 | 目录名   &#x2F;&#x2F;拥有着rwx权限  组用户r--权限   其他用户x权限</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><blockquote><p>原文作者: 屈永国</p><p>原文链接: <a href="https://www.github.com/qyg2019/2020/02/14/Linux基本命令4/">https://www.github.com/qyg2019/2020/02/14/Linux基本命令4/</a></p><p>版权声明: 转载请注明出处</p></blockquote></div><div class="tags"><a href="/tags/Linux/">Linux</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/" class="next">Linux基本命令(三)</a></div><div id="comments"><div id="container"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js?v=2.0.4"></script><script type="text/javascript" src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=2.0.4"></script><script>var gitalk = new Gitalk({
+  clientID: '0c514abaeb37ce99f0d2',
+  clientSecret: '4dbefaeb4c587a40d19b96566d2e777fa265eb98',
+  repo: 'qyg',
+  owner: 'qyg2019',
+  admin: ['qyg2019'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: false,
+  language: 'zh-CN',
+  pagerDirection: 'last'
+})
+gitalk.render('container')</script></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#用户-和-权限-的概念"><span class="toc-text">用户 和 权限 的概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#组"><span class="toc-text">组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改权限"><span class="toc-text">修改权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sudo"><span class="toc-text">sudo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#组管理-终端命令"><span class="toc-text">组管理 终端命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建用户-设置密码-删除用户"><span class="toc-text">创建用户 &#x2F; 设置密码 &#x2F; 删除用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看用户信息"><span class="toc-text">查看用户信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改用户主组"><span class="toc-text">修改用户主组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改用户附加组"><span class="toc-text">修改用户附加组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改用户登录shell"><span class="toc-text">修改用户登录shell</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#which"><span class="toc-text">which</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#切换用户su"><span class="toc-text">切换用户su</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改文件属性"><span class="toc-text">修改文件属性</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/">Linux基本命令(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A43/">Linux基本命令(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/">Linux基本命令(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/">Linux基本命令(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-4/">扩展对象的功能性</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/ES6-3/">函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/04/ES6-2/">字符串和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/23/ES6-1/">块级作用域绑定</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/12/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">vue实例的生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/05/webpack/">webpack使用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVVM%E4%B8%8EMVC/">MVVM与MVC</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/MVVM%E4%B8%8EMVC/" style="font-size: 15px;">MVVM与MVC</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">19</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.baidu.com/" title="百度" target="_blank">百度</a><ul></ul><a href="http://www.google.com/" title="google" target="_blank">google</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">网站地图</a> |  <a href="/atom.xml">订阅本站</a> |  <a href="/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/." rel="nofollow">屈永国.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/share/css/share.css"><script type="text/javascript" src="/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/share/js/qrcode.js" charset="utf-8"></script></body></html>

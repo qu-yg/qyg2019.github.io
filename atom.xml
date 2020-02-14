@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-14T08:39:45.442Z</updated>
+  <updated>2020-02-14T12:53:09.154Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux基本命令(四)</title>
+    <link href="https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/"/>
+    <id>https://www.github.com/qyg2019/2020/02/14/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A44/</id>
+    <published>2020-02-14T12:53:42.195Z</published>
+    <updated>2020-02-14T12:53:09.154Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="用户-和-权限-的概念"><a href="#用户-和-权限-的概念" class="headerlink" title="用户 和 权限 的概念"></a>用户 和 权限 的概念</h5><p>用户 是Linux 系统工作中中的一环, 用户管理包括 用户 和 组 管理<br>在 Linux 系统中,  不论是由本级或是远程登录系统,  每个系统都必须有一个账号, 并且对于不同的系统资源有不同的使用权限<br>在 Linux 中, 可以指定 每一个用户 针对 不同的文件或者目录 的不同权限<br>对 文件 / 目录 的权限包括:</p><table><thead><tr><th>权限</th><th>缩写</th><th>代号</th></tr></thead><tbody><tr><td>读</td><td>r</td><td>4</td></tr><tr><td>写</td><td>w</td><td>2</td></tr><tr><td>执行</td><td>x</td><td>1</td></tr></tbody></table><h5 id="组"><a href="#组" class="headerlink" title="组"></a>组</h5><p>在实际应用中, 可以预先对 组 设置好权限, 然后 将不同的用户添加到对应的组中, 从而不用一次为每一个用户设置</p><h5 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h5><p>chmod 简单使用</p><p>chmod 可以修改 用户 / 组 对 文件 / 目录 的权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +&#x2F;-rwx 文件名|目录名</span><br></pre></td></tr></table></figure><p> 超级用户</p><p>Linux  系统中的 root 账号通常 用于系统的维护和管理 ,  对操作系统的所有资源 具有所有访问权限<br>在大多数版本的 Linux 中 , 都不推荐 直接使用 root 账号登录系统<br>在 Linux 安装的过程中, 系统会自动创建一个用户账号,  而这个默认的用户就称为 “标准用户” </p><h5 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h5><p>su 是 substitute user 的缩写,  表示 使用另一个用户的身份<br>sudo 命令来以其他身份来执行命令,  预设的身份为 root<br>用户使用 sudo 时,必须先输入密码,  之后有5分钟的有效期限,  超过期限则必须重新输入密码</p><h5 id="组管理-终端命令"><a href="#组管理-终端命令" class="headerlink" title="组管理 终端命令"></a>组管理 终端命令</h5><p>创建组 / 删除组 的终端命令都需要通过 sudo 执行</p><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>groupadd</td><td>添加组</td></tr><tr><td>groupdel</td><td>删除组</td></tr><tr><td>chgrp</td><td>修改文件 / 目录的所属组</td></tr></tbody></table><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp 组名  文件 &#x2F; 目录名修改文件 &#x2F; 目录的所属组</span><br></pre></td></tr></table></figure><p>组信息保存在 /etc/group 文件中</p><h5 id="创建用户-设置密码-删除用户"><a href="#创建用户-设置密码-删除用户" class="headerlink" title="创建用户 / 设置密码 / 删除用户"></a>创建用户 / 设置密码 / 删除用户</h5><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>useradd -m -g     新建用户名</td><td>添加新用户     -m 自动建立用户家目录</td></tr><tr><td>passwd  用户名</td><td>设置用户密码    如果是普通用户, 直接用 passwd 可以修改自己的账户密码</td></tr><tr><td>userdel  -r  用户名</td><td>删除用户    -r 选项会自动删除用户家目录</td></tr></tbody></table><p>创建用户时, 如果忘记添加 -m 选项指定新用户的家目录 — 最简单的方法就是删除用户,  重新创建<br>创建用户时, 默认会创建一个和用户名同名的组名<br>用户信息保存在 /etc/passwd 文件中</p><h5 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h5><table><thead><tr><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>id   [用户名]</td><td>查看用户 UID 和 GID 信息</td></tr><tr><td>who</td><td>查看当前所有登录的用户列表</td></tr><tr><td>whoami</td><td>查看当前登录用户的账户名</td></tr></tbody></table><p>passwd 文件</p><p>/etc/passwd  文件存放的是用户的信息, 由 6 个分号组成的 7 个信息,  分别是</p><p>用户名<br>密码 (x,  表示加密的密码)<br>UID (用户标识)<br>GID (组标识)<br>用户全名 或 本地账号<br>家目录<br>登录使用的 Shell , 就是登录之后,  使用的终端命令,  ubuntu 默认是 dash</p><p>usermod </p><p>usermod 可以用来设置 用户 的 主组 / 附加组 和 登录 Shell,  命令格式如下 :<br>主组 : 通常在新建用户时指定, 在etc / passwd 的第 4 列 GID 对应的组<br>附加组 : 在 etc / group 中最后一列表示该组的用户列表, 用于指定 用户的附加权限</p><p>设置了用户的附加组之后, 需要重新登录才能生效</p><h5 id="修改用户主组"><a href="#修改用户主组" class="headerlink" title="修改用户主组"></a>修改用户主组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -g  组  用户名</span><br></pre></td></tr></table></figure><h5 id="修改用户附加组"><a href="#修改用户附加组" class="headerlink" title="修改用户附加组"></a>修改用户附加组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -G  组  用户名</span><br></pre></td></tr></table></figure><h5 id="修改用户登录shell"><a href="#修改用户登录shell" class="headerlink" title="修改用户登录shell"></a>修改用户登录shell</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod  -s  &#x2F;bin&#x2F;bash  用户名</span><br></pre></td></tr></table></figure><h5 id="which"><a href="#which" class="headerlink" title="which"></a><strong>which</strong></h5><p>查看执行命令所在位置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">which ls      &#x2F;&#x2F;      &#x2F;bin&#x2F;ls</span><br><span class="line"></span><br><span class="line">which useradd    &#x2F;&#x2F;    &#x2F;usr&#x2F;sbin&#x2F;useradd</span><br></pre></td></tr></table></figure><p>bin 和 sbin</p><p>在 Linux 中, 绝大多数可执行文件都是保存在 /bin , /sbin , /usr/bin , /usr/sbin<br>/bin (binary) 是二进制执行文件目录, 主要用于具体应用<br>/sbin (system binary) 是系统管理员专用的二进制代码存放目录,  主要用于系统管理<br>/usr/bin (user commands for applications) 后期安装的一些软件<br>/usr/sbin (super user commands for applications) 超级用户的一些管理程序</p><h5 id="切换用户su"><a href="#切换用户su" class="headerlink" title="切换用户su"></a>切换用户su</h5><table><thead><tr><th>su -用户名</th><th>切换用户</th></tr></thead><tbody><tr><td></td><td></td></tr></tbody></table><p>su 不接用户名,  可以切换到 root</p><h5 id="修改文件属性"><a href="#修改文件属性" class="headerlink" title="修改文件属性"></a>修改文件属性</h5><table><thead><tr><th>chown</th><th>修改拥有着</th></tr></thead><tbody><tr><td>chgrp</td><td>修改组</td></tr><tr><td>chmod</td><td>修改权限</td></tr></tbody></table><p>chmod的数字表示</p><table><thead><tr><th>拥有着</th><th>组用户</th><th>其他用户</th></tr></thead><tbody><tr><td>rwx</td><td>rwx</td><td>rwx</td></tr><tr><td>421</td><td>421</td><td>421</td></tr></tbody></table><table><thead><tr><th>000</th><th>0</th><th>—</th></tr></thead><tbody><tr><td>001</td><td>1</td><td>–x</td></tr><tr><td>020</td><td>2</td><td>-w-</td></tr><tr><td>021</td><td>3</td><td>-wx</td></tr><tr><td>400</td><td>4</td><td>r–</td></tr><tr><td>401</td><td>5</td><td>r-x</td></tr><tr><td>420</td><td>6</td><td>rw-</td></tr><tr><td>421</td><td>7</td><td>rwx</td></tr></tbody></table><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod  741 文件名 | 目录名   &#x2F;&#x2F;拥有着rwx权限  组用户r--权限   其他用户x权限</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;用户-和-权限-的概念&quot;&gt;&lt;a href=&quot;#用户-和-权限-的概念&quot; class=&quot;headerlink&quot; title=&quot;用户 和 权限 的概念&quot;&gt;&lt;/a&gt;用户 和 权限 的概念&lt;/h5&gt;&lt;p&gt;用户 是Linux 系统工作中中的一环, 用户管理包括 用户 和 组
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://www.github.com/qyg2019/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux基本命令(三)</title>
