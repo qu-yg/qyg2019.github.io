@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.github.com/qyg2019/"/>
-  <updated>2020-02-15T06:20:15.178Z</updated>
+  <updated>2020-02-29T03:16:26.263Z</updated>
   <id>https://www.github.com/qyg2019/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AMD CMD Commonjs和ES6对比</title>
+    <link href="https://www.github.com/qyg2019/2020/02/29/AMD%20CMD%20Commonjs%E5%92%8CES6%E5%AF%B9%E6%AF%94/"/>
+    <id>https://www.github.com/qyg2019/2020/02/29/AMD%20CMD%20Commonjs%E5%92%8CES6%E5%AF%B9%E6%AF%94/</id>
+    <published>2020-02-29T03:14:43.192Z</published>
+    <updated>2020-02-29T03:16:26.263Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="AMD-CMD-Commonjs和ES6对比"><a href="#AMD-CMD-Commonjs和ES6对比" class="headerlink" title="AMD CMD Commonjs和ES6对比"></a>AMD CMD Commonjs和ES6对比</h4><ul><li>AMD是RequireJS在推广过程中对模块定义规范化的产出，依赖前置，异步模块定义</li><li>CMD是SeaJS在推广过程中对模块定义规范化的产出，依赖就近，同步模块定义</li><li>CommonJS -module.exports,exports，node端使用</li><li>ES6特性 export/import</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;AMD-CMD-Commonjs和ES6对比&quot;&gt;&lt;a href=&quot;#AMD-CMD-Commonjs和ES6对比&quot; class=&quot;headerlink&quot; title=&quot;AMD CMD Commonjs和ES6对比&quot;&gt;&lt;/a&gt;AMD CMD Commonjs和ES6
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://www.github.com/qyg2019/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>常用正则（传智播客总结）</title>
@@ -518,33 +544,6 @@
       
         &lt;h3 id=&quot;vue-resource的使用&quot;&gt;&lt;a href=&quot;#vue-resource的使用&quot; class=&quot;headerlink&quot; title=&quot;vue-resource的使用&quot;&gt;&lt;/a&gt;vue-resource的使用&lt;/h3&gt;&lt;hr&gt;
 &lt;p&gt;Vue 要实现异步加载需要
-      
-    
-    </summary>
-    
-    
-      <category term="Vue" scheme="https://www.github.com/qyg2019/categories/Vue/"/>
-    
-    
-      <category term="Vue" scheme="https://www.github.com/qyg2019/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue指令学习</title>
-    <link href="https://www.github.com/qyg2019/2020/01/05/vue%E6%8C%87%E4%BB%A4/"/>
-    <id>https://www.github.com/qyg2019/2020/01/05/vue%E6%8C%87%E4%BB%A4/</id>
-    <published>2020-01-05T11:40:54.022Z</published>
-    <updated>2019-12-28T14:35:17.882Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="框架和库的区别"><a href="#框架和库的区别" class="headerlink" title="框架和库的区别"></a>框架和库的区别</h2><ul><li><p>框架：是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。</p><ul><li>node 中的 express；</li></ul></li><li><p>库（插件）：提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其它库实现需求。</p><ul><li><ol><li>从Jquery 切换到 Zepto</li></ol></li><li><ol start="2"><li>从 EJS 切换到 art-template</li></ol></li></ul></li></ul><h2 id="Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别"><a href="#Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别" class="headerlink" title="Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别"></a>Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别</h2><ul><li><p>MVC 是后端的分层开发概念；</p></li><li><p>MVVM是前端视图层的概念，主要关注于 视图层分离，也就是说：MVVM把前端的视图层，分为了 三部分 Model, View , VM ViewModel</p></li><li><p>为什么有了MVC还要有MVVM</p></li></ul><h2 id="Vue之-基本的代码结构和插值表达式、v-cloak"><a href="#Vue之-基本的代码结构和插值表达式、v-cloak" class="headerlink" title="Vue之 - 基本的代码结构和插值表达式、v-cloak"></a>Vue之 - <code>基本的代码结构</code>和<code>插值表达式</code>、<code>v-cloak</code></h2><h2 id="Vue指令之v-text和v-html"><a href="#Vue指令之v-text和v-html" class="headerlink" title="Vue指令之v-text和v-html"></a>Vue指令之<code>v-text</code>和<code>v-html</code></h2><p>v-text会覆盖元素中原本的内容，但是 插值表达式  只会替换自己的这个占位符，不会把 整个元素的内容清空</p><h2 id="Vue指令之v-bind的三种用法"><a href="#Vue指令之v-bind的三种用法" class="headerlink" title="Vue指令之v-bind的三种用法"></a>Vue指令之<code>v-bind</code>的三种用法</h2><ol><li><p>直接使用指令<code>v-bind</code></p></li><li><p>使用简化指令<code>:</code></p></li><li><p>在绑定的时候，拼接绑定内容：<code>:title=&quot;btnTitle + &#39;, 这是追加的内容&#39;&quot;</code></p></li></ol><h2 id="Vue指令之v-on的缩写和事件修饰符"><a href="#Vue指令之v-on的缩写和事件修饰符" class="headerlink" title="Vue指令之v-on的缩写和事件修饰符"></a>Vue指令之<code>v-on的缩写</code>和<code>事件修饰符</code></h2><h3 id="事件修饰符："><a href="#事件修饰符：" class="headerlink" title="事件修饰符："></a>事件修饰符：</h3><ul><li><p>.stop       阻止冒泡</p></li><li><p>.prevent    阻止默认事件</p></li><li><p>.capture    添加事件侦听器时使用事件捕获模式</p></li><li><p>.self       只当事件在该元素本身（比如不是子元素）触发时触发回调</p></li><li><p>.once       事件只触发一次</p></li></ul><h2 id="Vue指令之v-model和双向数据绑定"><a href="#Vue指令之v-model和双向数据绑定" class="headerlink" title="Vue指令之v-model和双向数据绑定"></a>Vue指令之<code>v-model</code>和<code>双向数据绑定</code></h2><p>v-bind 只能实现数据的单向绑定，从 M 自动绑定到 V， 无法实现数据的双向绑定</p><p>使用  v-model 指令，可以实现 表单元素和 Model 中数据的双向数据绑定</p><p>注意： v-model 只能运用在 表单元素中</p><h2 id="在Vue中使用样式"><a href="#在Vue中使用样式" class="headerlink" title="在Vue中使用样式"></a>在Vue中使用样式</h2><h3 id="使用class样式"><a href="#使用class样式" class="headerlink" title="使用class样式"></a>使用class样式</h3><ol><li><p>数组</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class&#x3D;&quot;[&#39;red&#39;, &#39;thin&#39;]&quot;&gt;这是一个邪恶的H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li><li><p>数组中使用三元表达式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class&#x3D;&quot;[&#39;red&#39;, &#39;thin&#39;, isactive?&#39;active&#39;:&#39;&#39;]&quot;&gt;这是H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li><li><p>数组中嵌套对象</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class&#x3D;&quot;[&#39;red&#39;, &#39;thin&#39;, &#123;&#39;active&#39;: isactive&#125;]&quot;&gt;这是H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li><li><p>直接使用对象</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :class&#x3D;&quot;&#123;red:true, italic:true, active:true, thin:true&#125;&quot;&gt;这是H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li></ol><h3 id="使用内联样式"><a href="#使用内联样式" class="headerlink" title="使用内联样式"></a>使用内联样式</h3><ol><li><p>直接在元素上通过 <code>:style</code> 的形式，书写样式对象</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :style&#x3D;&quot;&#123;color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;&#125;&quot;&gt;这是的H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li><li><p>将样式对象，定义到 <code>data</code> 中，并直接引用到 <code>:style</code> 中</p><ul><li>在data上定义样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">        h1StyleObj: &#123; color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;, &#39;font-weight&#39;: &#39;200&#39; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :style&#x3D;&quot;h1StyleObj&quot;&gt;这是H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li></ul></li><li><p>在 <code>:style</code> 中通过数组，引用多个 <code>data</code> 上的样式对象</p><ul><li>在data上定义样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">        h1StyleObj: &#123; color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;, &#39;font-weight&#39;: &#39;200&#39; &#125;,</span><br><span class="line">        h1StyleObj2: &#123; fontStyle: &#39;italic&#39; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 :style&#x3D;&quot;[h1StyleObj, h1StyleObj2]&quot;&gt;这是H1&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure></li></ul></li></ol><h2 id="Vue指令之v-for和key属性"><a href="#Vue指令之v-for和key属性" class="headerlink" title="Vue指令之v-for和key属性"></a>Vue指令之<code>v-for</code>和<code>key</code>属性</h2><ol><li>迭代数组</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li v-for&#x3D;&quot;(item, i) in list&quot;&gt;索引：&#123;&#123;i&#125;&#125; --- 姓名：&#123;&#123;item.name&#125;&#125; --- 年龄：&#123;&#123;item.age&#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure><ol start="2"><li>迭代对象中的属性</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 循环遍历对象身上的属性 --&gt;</span><br><span class="line"></span><br><span class="line">   &lt;div v-for&#x3D;&quot;(val, key, i) in userInfo&quot;&gt;&#123;&#123;val&#125;&#125; --- &#123;&#123;key&#125;&#125; --- &#123;&#123;i&#125;&#125;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure><ol start="3"><li>迭代数字</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;p v-for&#x3D;&quot;i in 10&quot;&gt;这是第 &#123;&#123;i&#125;&#125; 个P标签&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure><blockquote><p>2.2.0+ 的版本里，<strong>当在组件中使用</strong> v-for 时，key 现在是必须的。</p></blockquote><p>当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用 “<strong>就地复用</strong>” 策略。如果数据项的顺序被改变，Vue将<strong>不是移动 DOM 元素来匹配数据项的顺序</strong>， 而是<strong>简单复用此处每个元素</strong>，并且确保它在特定索引下显示已被渲染过的每个元素。</p><p>为了给 Vue 一个提示，<strong>以便它能跟踪每个节点的身份，从而重用和重新排序现有元素</strong>，你需要为每项提供一个唯一 key 属性。</p><h2 id="Vue指令之v-if和v-show"><a href="#Vue指令之v-if和v-show" class="headerlink" title="Vue指令之v-if和v-show"></a>Vue指令之<code>v-if</code>和<code>v-show</code></h2><p>v-if 的特点：每次都会重新删除或创建元素</p><p>v-show 的特点： 每次不会重新进行DOM的删除和创建操作，只是切换了元素的 display:none 样式</p><p>v-if 有较高的切换性能消耗<br>v-show 有较高的初始渲染消耗</p><blockquote><p>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;框架和库的区别&quot;&gt;&lt;a href=&quot;#框架和库的区别&quot; class=&quot;headerlink&quot; title=&quot;框架和库的区别&quot;&gt;&lt;/a&gt;框架和库的区别&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;框架：是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架
       
     
     </summary>
